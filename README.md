@@ -30,9 +30,9 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
 * User can see a list of all stores within a certain radius that fit their preferences
 * Tapping on a store shows all deals (get deals from database or API)
 * Notification when nearby a store with deals that fits their preferences
-* Settings (Radius, Notifications, General, etc.)
+* Settings (Account, Notifications)
 * Profile with profile picture and preferences
-* Map view where any store can be tapped to see deals
+* Map view where stores with deals are marked
 
 **Optional Nice-to-have Stories**
 
@@ -51,6 +51,8 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
     * View and change preferences
 * Stream - Nearby Stores
     * User can see a list of all stores within a certain radius that fit their preferences
+* Map View
+    * Stores with deals are marked
 * Detail - Deals
     * Get deals from database or API
 * Settings
@@ -69,10 +71,15 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
 * Login Screen
    * => Nearby Stores
 * Registration Screen
+   * => Preference Selection
    * => Nearby Stores
 * Profile
    * => Settings
+   * => Preference Selection
+   * => Photo
 * Stream - Nearby Stores
+   * => Deals
+* Map View
    * => Deals
 * Detail - Deals
    * => None
