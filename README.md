@@ -6,6 +6,7 @@ Original App Design Project
 ## Table of Contents
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
+1. [Wireframes](#Wireframes)
 
 ## Overview
 ### Description
@@ -78,3 +79,6 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
    * => None
 * Settings
    * => None
+   
+## Wireframes
+<img src="https://i.imgur.com/iilsBob.jpg" width=800>
