@@ -32,12 +32,12 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
 * Notification when nearby a store with deals that fits their preferences
 * Settings (Radius, Notifications, General, etc.)
 * Profile with profile picture and preferences
+* Map view where any store can be tapped to see deals
 
 **Optional Nice-to-have Stories**
 
 * Users can submit deals for approval to be added
 * Business profile that can add deals
-* Map view where any store can be tapped to see deals
 * User can search stores
 
 ### 2. Screen Archetypes
@@ -61,9 +61,8 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
 **Tab Navigation** (Tab to Screen)
 
 * Deals
+* Map View
 * Profile
-* Settings
-* Optional: Map View
 
 **Flow Navigation** (Screen to Screen)
 
