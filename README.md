@@ -87,4 +87,4 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
    * => None
    
 ## Wireframes
-<img src="https://i.imgur.com/oLvl4M3" width=800>
+<img src="https://i.imgur.com/oLvl4M3.jpg" width=800>
