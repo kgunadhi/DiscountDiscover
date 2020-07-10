@@ -7,6 +7,7 @@ Original App Design Project
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
+2. [Schema](#Schema)
 
 ## Overview
 ### Description
@@ -88,3 +89,88 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
    
 ## Wireframes
 <img src="https://i.imgur.com/oLvl4M3.jpg" width=800>
+
+## Schema 
+### Models
+#### Deal
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | id            | Number   | unique id for the deal |
+   | title         | String   | title of deal |
+   | description   | String   | description of deal |
+   | fine_print    | String   | "fine print" details of deal |
+   | url           | String   | url of deal |
+   | category_name | String   | category of deal |
+   | category_slug | String   | category slug of deal |
+   | image_url     | String   | url of deal's image |
+   | expiresAt     | DateTime | date when deal expires |
+   | merchant      | Pointer to Merchant | merchant of deal |
+   
+#### Merchant
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | id            | Number   | unique id for the merchant |
+   | name          | String   | name of merchant |
+   | address       | String   | address of merchant |
+
+### Networking
+#### List of network requests by screen
+   - Login Screen
+      - (Read/GET) Check login credentials
+       ```objective-c
+       [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
+            if (error) {
+                 NSLog(@"User log in failed: %@", error.localizedDescription);
+            
+            } else {
+                 NSLog(@"User logged in successfully");
+                 // segue to Nearby Stores
+            }
+        }
+        ```
+   - Registration Screen
+      - (Create/POST) Create a new user
+       ```objective-c
+       [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
+            if (error) {
+                 NSLog(@"User log in failed: %@", error.localizedDescription);
+            
+            } else {
+                 NSLog(@"User registered successfully");
+                 // segue to Nearby Stores
+            }
+        }
+        ```
+   - Profile
+      - (Update/PUT) Update user profile image
+      ```objective-c
+       PFQuery *query = [PFQuery queryWithClassName:@"User"];
+
+        // Retrieve the object by id
+        [query getObjectInBackgroundWithId:currentId block:^(PFObject *user, NSError *error) {
+            user[@"image"] = // get image;
+            [user saveInBackground];
+        }
+        ```
+      - (Update/PUT) Update user preferences
+      ```objective-c
+       PFQuery *query = [PFQuery queryWithClassName:@"User"];
+
+        // Retrieve the object by id
+        [query getObjectInBackgroundWithId:currentId block:^(PFObject *user, NSError *error) {
+            user[@"preferences"] = // new preferences;
+            [user saveInBackground];
+        }
+        ```
+        
+#### Existing API Endpoints
+##### Discount API
+- Base URL - [https://api.discountapi.com/v2](https://api.discountapi.com/v2)
+
+   HTTP Verb | Endpoint | Description
+   ----------|----------|------------
+    `GET`    | /deals/?location=location&radius=radius&category_slugs=category_slugs | get all deals within radius of location within specified categories
+    `GET`    | /deals/:id | gets specific deal by :id
+    `GET`    | /categories   | get all categories
