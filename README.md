@@ -52,13 +52,13 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
     * Upload profile photo
     * View and change preferences
 * Stream - Nearby Deals
-    * User can see a list of all deals within a certain radius that fit their preferences
+    * User can see a list of all deals within a certain radius that fit their preferences (from DiscountAPI)
 * Map View
     * Stores with deals are marked
 * Detail - Deals
-    * Get deals from DiscountAPI
+    * Show details of tapped deal
 * Settings
-    * Radius and notifications settings
+    * Account and notifications settings
 
 ### 3. Navigation
 
