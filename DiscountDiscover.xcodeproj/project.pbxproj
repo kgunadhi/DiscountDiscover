@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83179277317F3C324A695F67 /* Pods_DiscountDiscover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A22BCCF83CE85DDC406631F /* Pods_DiscountDiscover.framework */; };
 		9B7FF60C24BD129900204BC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7FF60B24BD129900204BC1 /* AppDelegate.m */; };
 		9B7FF60F24BD129900204BC1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7FF60E24BD129900204BC1 /* SceneDelegate.m */; };
 		9B7FF61224BD129900204BC1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7FF61124BD129900204BC1 /* ViewController.m */; };
@@ -17,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A22BCCF83CE85DDC406631F /* Pods_DiscountDiscover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiscountDiscover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		381E150A9F801512FAF0D429 /* Pods-DiscountDiscover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiscountDiscover.release.xcconfig"; path = "Target Support Files/Pods-DiscountDiscover/Pods-DiscountDiscover.release.xcconfig"; sourceTree = "<group>"; };
+		4CDFA65310EE43BA0E0D84D5 /* Pods-DiscountDiscover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiscountDiscover.debug.xcconfig"; path = "Target Support Files/Pods-DiscountDiscover/Pods-DiscountDiscover.debug.xcconfig"; sourceTree = "<group>"; };
 		9B7FF60724BD129900204BC1 /* DiscountDiscover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscountDiscover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B7FF60A24BD129900204BC1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9B7FF60B24BD129900204BC1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -36,17 +40,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83179277317F3C324A695F67 /* Pods_DiscountDiscover.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A98483766ADB80CCD2D8484 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A22BCCF83CE85DDC406631F /* Pods_DiscountDiscover.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9B7FF5FE24BD129900204BC1 = {
 			isa = PBXGroup;
 			children = (
 				9B7FF60924BD129900204BC1 /* DiscountDiscover */,
 				9B7FF60824BD129900204BC1 /* Products */,
+				C2E094C375649F66A4077CBC /* Pods */,
+				1A98483766ADB80CCD2D8484 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +91,16 @@
 			path = DiscountDiscover;
 			sourceTree = "<group>";
 		};
+		C2E094C375649F66A4077CBC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4CDFA65310EE43BA0E0D84D5 /* Pods-DiscountDiscover.debug.xcconfig */,
+				381E150A9F801512FAF0D429 /* Pods-DiscountDiscover.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B7FF62024BD129A00204BC1 /* Build configuration list for PBXNativeTarget "DiscountDiscover" */;
 			buildPhases = (
+				1C0224BF0D47419AEF4456F5 /* [CP] Check Pods Manifest.lock */,
 				9B7FF60324BD129900204BC1 /* Sources */,
 				9B7FF60424BD129900204BC1 /* Frameworks */,
 				9B7FF60524BD129900204BC1 /* Resources */,
+				CA0F74CCDAF8C75BE2B3C55D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,6 +167,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C0224BF0D47419AEF4456F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DiscountDiscover-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA0F74CCDAF8C75BE2B3C55D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DiscountDiscover/Pods-DiscountDiscover-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DiscountDiscover/Pods-DiscountDiscover-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DiscountDiscover/Pods-DiscountDiscover-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9B7FF60324BD129900204BC1 /* Sources */ = {
@@ -287,6 +356,7 @@
 		};
 		9B7FF62124BD129A00204BC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CDFA65310EE43BA0E0D84D5 /* Pods-DiscountDiscover.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,6 +374,7 @@
 		};
 		9B7FF62224BD129A00204BC1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 381E150A9F801512FAF0D429 /* Pods-DiscountDiscover.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
