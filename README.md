@@ -19,7 +19,7 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
 - **Story:** This app makes it easy for users to find deals and decide where they might want to shop without having to go out of their way to look for them.
 - **Market:** This app appeals to any individual who shops. This is a large potential user base.
 - **Habit:** This app can be used any time the user wants to shop, which could be rather often.
-- **Scope:** Building this app includes exploration of integrating a map SDK to find nearby stores, pulling the deals from a database or API, and creating a user profile with preferences. It could be expanded to create business profiles that can add deals.
+- **Scope:** Building this app includes exploration of integrating a map SDK to find nearby stores, pulling the deals from an API, and creating a user profile with preferences. It could be expanded to create business profiles that can add deals.
 
 ## Product Spec
 
@@ -28,7 +28,7 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
 **Required Must-have Stories**
 
 * User can create new account/log in to access preference settings
-* User can see a list of all deals within a certain radius that fit their preferences (get deals from API)
+* User can see a list of all deals within a certain radius that fit their preferences (get deals from DiscountAPI)
 * Tapping on a deal shows deal details
 * Notification when nearby a store with deals that fits their preferences
 * Settings (Account, Notifications)
@@ -56,7 +56,7 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
 * Map View
     * Stores with deals are marked
 * Detail - Deals
-    * Get deals from API
+    * Get deals from DiscountAPI
 * Settings
     * Radius and notifications settings
 
