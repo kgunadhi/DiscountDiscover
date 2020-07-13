@@ -40,6 +40,7 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
 * Users can submit deals for approval to be added
 * Business profile that can add deals
 * User can search stores
+* Stores that don't have deals show at the bottom of the list
 
 ### 2. Screen Archetypes
 
@@ -50,8 +51,8 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
 * Profile
     * Upload profile photo
     * View and change preferences
-* Stream - Nearby Stores
-    * User can see a list of all stores within a certain radius that fit their preferences
+* Stream - Nearby Deals
+    * User can see a list of all deals within a certain radius that fit their preferences
 * Map View
     * Stores with deals are marked
 * Detail - Deals
@@ -70,15 +71,15 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
 **Flow Navigation** (Screen to Screen)
 
 * Login Screen
-   * => Nearby Stores
+   * => Nearby Deals
 * Registration Screen
    * => Preference Selection
-   * => Nearby Stores
+   * => Nearby Deals
 * Profile
    * => Settings
    * => Preference Selection
    * => Photo
-* Stream - Nearby Stores
+* Stream - Nearby Deals
    * => Deals
 * Map View
    * => Deals
