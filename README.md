@@ -114,6 +114,16 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
    | id            | Number   | unique id for the merchant |
    | name          | String   | name of merchant |
    | address       | String   | address of merchant |
+   
+#### User
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | id            | Number   | unique id for the user |
+   | username      | String   | username of user |
+   | password      | String   | password of user |
+   | email         | String   | email of user |
+   | preferences   | Array    | selected preference categories of user |
 
 ### Networking
 #### List of network requests by screen
