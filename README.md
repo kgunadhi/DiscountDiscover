@@ -92,7 +92,7 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
 
 ## Schema 
 ### Models
-#### Deal
+#### Deal - from DiscountAPI
 
    | Property      | Type     | Description |
    | ------------- | -------- | ------------|
@@ -107,7 +107,7 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
    | expiresAt     | DateTime | date when deal expires |
    | merchant      | Pointer to Merchant | merchant of deal |
    
-#### Merchant
+#### Merchant - from DiscountAPI
 
    | Property      | Type     | Description |
    | ------------- | -------- | ------------|
@@ -115,7 +115,7 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
    | name          | String   | name of merchant |
    | address       | String   | address of merchant |
    
-#### User
+#### User - from Parse
 
    | Property      | Type     | Description |
    | ------------- | -------- | ------------|
