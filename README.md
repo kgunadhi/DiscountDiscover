@@ -120,7 +120,7 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
 
    | Property      | Type     | Description |
    | ------------- | -------- | ------------|
-   | id            | Number   | unique id for the user |
+   | objectId            | Number   | unique id for the user |
    | username      | String   | username of user |
    | password      | String   | password of user |
    | email         | String   | email of user |
