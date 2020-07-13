@@ -33,7 +33,7 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
 * Notification when nearby a store with deals that fits their preferences
 * Settings (Account, Notifications)
 * Profile with profile picture and preferences
-* Map view where stores with deals are marked
+* Map view (Google Maps SDK) where stores with deals are marked
 
 **Optional Nice-to-have Stories**
 
