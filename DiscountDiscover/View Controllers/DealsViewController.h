@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DealsViewController.h
 //  DiscountDiscover
 //
 //  Created by Kaitlyn Gunadhi on 7/13/20.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface DealsViewController : UIViewController
 
 @end
 
+NS_ASSUME_NONNULL_END

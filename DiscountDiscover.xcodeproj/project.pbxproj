@@ -3,18 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		83179277317F3C324A695F67 /* Pods_DiscountDiscover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A22BCCF83CE85DDC406631F /* Pods_DiscountDiscover.framework */; };
 		9B7FF60C24BD129900204BC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7FF60B24BD129900204BC1 /* AppDelegate.m */; };
 		9B7FF60F24BD129900204BC1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7FF60E24BD129900204BC1 /* SceneDelegate.m */; };
-		9B7FF61224BD129900204BC1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7FF61124BD129900204BC1 /* ViewController.m */; };
 		9B7FF61524BD129900204BC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7FF61324BD129900204BC1 /* Main.storyboard */; };
 		9B7FF61724BD129A00204BC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B7FF61624BD129A00204BC1 /* Assets.xcassets */; };
 		9B7FF61A24BD129A00204BC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7FF61824BD129A00204BC1 /* LaunchScreen.storyboard */; };
 		9B7FF61D24BD129A00204BC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7FF61C24BD129A00204BC1 /* main.m */; };
+		9B7FF62E24BD16DC00204BC1 /* DealsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7FF62D24BD16DC00204BC1 /* DealsViewController.m */; };
+		9B7FF63124BD18B200204BC1 /* DealCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7FF63024BD18B200204BC1 /* DealCell.m */; };
+		9B7FF63424BD18CA00204BC1 /* Deal.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7FF63324BD18CA00204BC1 /* Deal.m */; };
+		9B7FF63724BD1AAF00204BC1 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7FF63624BD1AAF00204BC1 /* APIManager.m */; };
+		9B7FF63924BE6A2F00204BC1 /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B7FF63824BE6A2E00204BC1 /* APIKeys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,13 +30,20 @@
 		9B7FF60B24BD129900204BC1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9B7FF60D24BD129900204BC1 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		9B7FF60E24BD129900204BC1 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		9B7FF61024BD129900204BC1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9B7FF61124BD129900204BC1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9B7FF61424BD129900204BC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B7FF61624BD129A00204BC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B7FF61924BD129A00204BC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B7FF61B24BD129A00204BC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B7FF61C24BD129A00204BC1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9B7FF62C24BD16DC00204BC1 /* DealsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DealsViewController.h; sourceTree = "<group>"; };
+		9B7FF62D24BD16DC00204BC1 /* DealsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DealsViewController.m; sourceTree = "<group>"; };
+		9B7FF62F24BD18B200204BC1 /* DealCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DealCell.h; sourceTree = "<group>"; };
+		9B7FF63024BD18B200204BC1 /* DealCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DealCell.m; sourceTree = "<group>"; };
+		9B7FF63224BD18CA00204BC1 /* Deal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Deal.h; sourceTree = "<group>"; };
+		9B7FF63324BD18CA00204BC1 /* Deal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Deal.m; sourceTree = "<group>"; };
+		9B7FF63524BD1AAF00204BC1 /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		9B7FF63624BD1AAF00204BC1 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
+		9B7FF63824BE6A2E00204BC1 /* APIKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,15 +91,54 @@
 				9B7FF60B24BD129900204BC1 /* AppDelegate.m */,
 				9B7FF60D24BD129900204BC1 /* SceneDelegate.h */,
 				9B7FF60E24BD129900204BC1 /* SceneDelegate.m */,
-				9B7FF61024BD129900204BC1 /* ViewController.h */,
-				9B7FF61124BD129900204BC1 /* ViewController.m */,
+				9B7FF62824BD14EA00204BC1 /* API */,
+				9B7FF62324BD14BB00204BC1 /* Models */,
+				9B7FF62624BD14D400204BC1 /* View Controllers */,
+				9B7FF62524BD14D000204BC1 /* Views */,
 				9B7FF61324BD129900204BC1 /* Main.storyboard */,
 				9B7FF61624BD129A00204BC1 /* Assets.xcassets */,
 				9B7FF61824BD129A00204BC1 /* LaunchScreen.storyboard */,
+				9B7FF63824BE6A2E00204BC1 /* APIKeys.plist */,
 				9B7FF61B24BD129A00204BC1 /* Info.plist */,
 				9B7FF61C24BD129A00204BC1 /* main.m */,
 			);
 			path = DiscountDiscover;
+			sourceTree = "<group>";
+		};
+		9B7FF62324BD14BB00204BC1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9B7FF63224BD18CA00204BC1 /* Deal.h */,
+				9B7FF63324BD18CA00204BC1 /* Deal.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9B7FF62524BD14D000204BC1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9B7FF62F24BD18B200204BC1 /* DealCell.h */,
+				9B7FF63024BD18B200204BC1 /* DealCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9B7FF62624BD14D400204BC1 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9B7FF62C24BD16DC00204BC1 /* DealsViewController.h */,
+				9B7FF62D24BD16DC00204BC1 /* DealsViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		9B7FF62824BD14EA00204BC1 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				9B7FF63524BD1AAF00204BC1 /* APIManager.h */,
+				9B7FF63624BD1AAF00204BC1 /* APIManager.m */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		C2E094C375649F66A4077CBC /* Pods */ = {
@@ -97,7 +147,6 @@
 				4CDFA65310EE43BA0E0D84D5 /* Pods-DiscountDiscover.debug.xcconfig */,
 				381E150A9F801512FAF0D429 /* Pods-DiscountDiscover.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -161,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B7FF61A24BD129A00204BC1 /* LaunchScreen.storyboard in Resources */,
+				9B7FF63924BE6A2F00204BC1 /* APIKeys.plist in Resources */,
 				9B7FF61724BD129A00204BC1 /* Assets.xcassets in Resources */,
 				9B7FF61524BD129900204BC1 /* Main.storyboard in Resources */,
 			);
@@ -215,8 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B7FF61224BD129900204BC1 /* ViewController.m in Sources */,
+				9B7FF62E24BD16DC00204BC1 /* DealsViewController.m in Sources */,
+				9B7FF63424BD18CA00204BC1 /* Deal.m in Sources */,
 				9B7FF60C24BD129900204BC1 /* AppDelegate.m in Sources */,
+				9B7FF63124BD18B200204BC1 /* DealCell.m in Sources */,
+				9B7FF63724BD1AAF00204BC1 /* APIManager.m in Sources */,
 				9B7FF61D24BD129A00204BC1 /* main.m in Sources */,
 				9B7FF60F24BD129900204BC1 /* SceneDelegate.m in Sources */,
 			);
