@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Parse/Parse.h"
+@import GoogleMaps;
 
 @interface AppDelegate ()
 
@@ -25,6 +26,12 @@
     }];
     
     [Parse initializeWithConfiguration:config];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:
+                    @"APIKeys" ofType:@"plist"];
+    NSDictionary *plist = [[NSDictionary alloc] initWithContentsOfFile:path];
+    NSString *apiKey = [plist valueForKey:@"GoogleAPIKey"];
+    [GMSServices provideAPIKey:apiKey];
     
     return YES;
 }

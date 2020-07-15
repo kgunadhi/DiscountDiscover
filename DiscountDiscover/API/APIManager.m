@@ -29,7 +29,7 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:
                     @"APIKeys" ofType:@"plist"];
     NSDictionary *plist = [[NSDictionary alloc] initWithContentsOfFile:path];
-    NSArray *apiKey = [plist valueForKey:@"DiscountAPIKey"];
+    NSString *apiKey = [plist valueForKey:@"DiscountAPIKey"];
     
     NSString *urlString = [NSString stringWithFormat:@"%@%@%@", @"https://api.discountapi.com/v2/deals?api_key=", apiKey, @"&location=37.783333,-122.416667&radius=1"];
     NSURL *url = [NSURL URLWithString:urlString];

@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="-290" y="-640"/>
         </scene>
-        <!--Deals View Controller-->
+        <!--Deals-->
         <scene sceneID="tus-NO-QMm">
             <objects>
                 <viewController id="xxO-ml-mfv" customClass="DealsViewController" sceneMemberID="viewController">
@@ -82,7 +82,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tol-KQ-Ber"/>
                     </view>
-                    <navigationItem key="navigationItem" id="iYb-Lu-We0"/>
+                    <navigationItem key="navigationItem" title="Deals" id="iYb-Lu-We0"/>
                     <connections>
                         <outlet property="collectionView" destination="P8b-qX-ACA" id="VXe-xa-dev"/>
                     </connections>
@@ -91,23 +91,23 @@
             </objects>
             <point key="canvasLocation" x="-1194.2028985507247" y="805.58035714285711"/>
         </scene>
-        <!--View Controller-->
+        <!--Map-->
         <scene sceneID="KWq-Zc-cgn">
             <objects>
-                <viewController id="uk2-R2-okY" sceneMemberID="viewController">
+                <viewController id="uk2-R2-okY" customClass="MapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wwt-Ir-7lq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="t5K-0Z-P6Q"/>
                     </view>
-                    <navigationItem key="navigationItem" id="b7B-iJ-40G"/>
+                    <navigationItem key="navigationItem" title="Map" id="b7B-iJ-40G"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSe-zX-Yy7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-291" y="806"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile-->
         <scene sceneID="CaH-5g-jQW">
             <objects>
                 <viewController id="1b3-DQ-VRT" sceneMemberID="viewController">
@@ -117,7 +117,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="X8l-xv-i9z"/>
                     </view>
-                    <navigationItem key="navigationItem" id="x69-vT-Swr"/>
+                    <navigationItem key="navigationItem" title="Profile" id="x69-vT-Swr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pot-UQ-aeJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

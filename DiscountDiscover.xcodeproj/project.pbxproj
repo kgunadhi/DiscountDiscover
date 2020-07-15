@@ -19,6 +19,7 @@
 		9B7FF63424BD18CA00204BC1 /* Deal.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7FF63324BD18CA00204BC1 /* Deal.m */; };
 		9B7FF63724BD1AAF00204BC1 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7FF63624BD1AAF00204BC1 /* APIManager.m */; };
 		9B7FF63924BE6A2F00204BC1 /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B7FF63824BE6A2E00204BC1 /* APIKeys.plist */; };
+		9B7FF63C24BF59C800204BC1 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7FF63B24BF59C800204BC1 /* MapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		9B7FF63524BD1AAF00204BC1 /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
 		9B7FF63624BD1AAF00204BC1 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		9B7FF63824BE6A2E00204BC1 /* APIKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
+		9B7FF63A24BF59C800204BC1 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		9B7FF63B24BF59C800204BC1 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 			children = (
 				9B7FF62C24BD16DC00204BC1 /* DealsViewController.h */,
 				9B7FF62D24BD16DC00204BC1 /* DealsViewController.m */,
+				9B7FF63A24BF59C800204BC1 /* MapViewController.h */,
+				9B7FF63B24BF59C800204BC1 /* MapViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 				9B7FF60424BD129900204BC1 /* Frameworks */,
 				9B7FF60524BD129900204BC1 /* Resources */,
 				CA0F74CCDAF8C75BE2B3C55D /* [CP] Embed Pods Frameworks */,
+				25903694ABEB06CD7E31164B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -241,6 +247,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		25903694ABEB06CD7E31164B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DiscountDiscover/Pods-DiscountDiscover-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DiscountDiscover/Pods-DiscountDiscover-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DiscountDiscover/Pods-DiscountDiscover-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CA0F74CCDAF8C75BE2B3C55D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -268,6 +291,7 @@
 				9B7FF62E24BD16DC00204BC1 /* DealsViewController.m in Sources */,
 				9B7FF63424BD18CA00204BC1 /* Deal.m in Sources */,
 				9B7FF60C24BD129900204BC1 /* AppDelegate.m in Sources */,
+				9B7FF63C24BF59C800204BC1 /* MapViewController.m in Sources */,
 				9B7FF63124BD18B200204BC1 /* DealCell.m in Sources */,
 				9B7FF63724BD1AAF00204BC1 /* APIManager.m in Sources */,
 				9B7FF61D24BD129A00204BC1 /* main.m in Sources */,

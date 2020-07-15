@@ -13,7 +13,7 @@
 @interface DealsViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (nonatomic, strong) NSArray *deals;
+@property (nonatomic, strong) NSArray<Deal *> *deals;
 
 @end
 
@@ -44,9 +44,9 @@
 //    [self.activityIndicator startAnimating];
     __weak DealsViewController *weakSelf = self;
     APIManager *manager = [APIManager new];
-    [manager fetchDeals:^(NSArray *deals, NSError *error) {
+    [manager fetchDeals:^(NSArray<Deal *> *deals, NSError *error) {
         if (error != nil) {
-            UIAlertController *networkAlert = [UIAlertController alertControllerWithTitle:@"Cannot Get Movies" message:@"The Internet connection appears to be offline." preferredStyle:(UIAlertControllerStyleAlert)];
+            UIAlertController *networkAlert = [UIAlertController alertControllerWithTitle:@"Cannot Get Deals" message:@"The Internet connection appears to be offline." preferredStyle:(UIAlertControllerStyleAlert)];
             UIAlertAction *reloadAction = [UIAlertAction actionWithTitle:@"Try Again" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 [weakSelf fetchDeals];
             }];
@@ -55,7 +55,6 @@
         }
         else {
             self.deals = deals;
-            NSLog(@"Success");
             [self.collectionView reloadData];
         }
 //        [self.activityIndicator stopAnimating];
