@@ -8,8 +8,9 @@
 
 #import "MapViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface MapViewController ()
+@interface MapViewController () <CLLocationManagerDelegate>
 
 @end
 
@@ -17,9 +18,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [locationManager requestWhenInUseAuthorization];
+    }
+    
+    [locationManager startUpdatingLocation];
+    CLLocationCoordinate2D locationCoordinate = locationManager.location.coordinate;
+    [locationManager stopUpdatingLocation];
 
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:37.783333 longitude:-122.416667 zoom:15];
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:locationCoordinate.latitude longitude:locationCoordinate.longitude zoom:15];
     GMSMapView *mapView = [GMSMapView mapWithFrame:self.view.frame camera:camera];
+    mapView.settings.myLocationButton = YES;
     mapView.myLocationEnabled = YES;
     [self.view addSubview:mapView];
 }
