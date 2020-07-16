@@ -7,6 +7,7 @@
 //
 
 #import "DealCell.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation DealCell
 
@@ -15,6 +16,16 @@
     _deal = deal;
 
     self.nameLabel.text = self.deal.name;
+    self.storeLabel.text = self.deal.storeName;
+    // self.distanceLabel.text = calculate distance;
+    
+    self.dealImageView.image = nil;
+    if (self.deal.imageUrl != nil) {
+        [self.dealImageView setImageWithURL:self.deal.imageUrl];
+    }
+    
+    self.layer.cornerRadius = 7;
+    self.layer.masksToBounds = YES;
 }
 
 @end

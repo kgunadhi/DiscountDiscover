@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray<Deal *> *deals;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -26,6 +27,10 @@
     self.collectionView.delegate = self;
     
     [self fetchDeals];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(fetchDeals) forControlEvents:UIControlEventValueChanged];
+    [self.collectionView insertSubview:self.refreshControl atIndex:0];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -58,7 +63,7 @@
             [self.collectionView reloadData];
         }
 //        [self.activityIndicator stopAnimating];
-//        [self.refreshControl endRefreshing];
+        [self.refreshControl endRefreshing];
     }];
 }
 

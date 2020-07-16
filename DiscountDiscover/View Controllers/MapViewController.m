@@ -32,7 +32,7 @@
     CLLocationCoordinate2D locationCoordinate = locationManager.location.coordinate;
     [locationManager stopUpdatingLocation];
 
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:locationCoordinate.latitude longitude:locationCoordinate.longitude zoom:15];
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:locationCoordinate.latitude longitude:locationCoordinate.longitude zoom:17];
     GMSMapView *mapView = [GMSMapView mapWithFrame:self.view.frame camera:camera];
     mapView.settings.myLocationButton = YES;
     mapView.myLocationEnabled = YES;

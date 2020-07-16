@@ -13,7 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DealCell : UICollectionViewCell
 
-@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *dealImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *storeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 @property (nonatomic, strong) Deal *deal;
 
 @end
