@@ -53,7 +53,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="239" height="264"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mjv-nw-JLe">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mjv-nw-JLe">
                                                     <rect key="frame" x="0.0" y="0.0" width="239" height="179.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Mjv-nw-JLe" secondAttribute="height" multiplier="4:3" id="Dlb-9H-qQh"/>
@@ -195,8 +195,8 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8b-Lw-Wpx">
-                                <rect key="frame" x="20" y="555.5" width="374" height="45"/>
-                                <color key="backgroundColor" red="0.25656804439999997" green="0.57562088970000003" blue="0.93729478119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="20" y="570.5" width="374" height="45"/>
+                                <color key="backgroundColor" red="0.51637595889999999" green="0.78783518080000003" blue="0.8039283156" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="SX7-Zj-3Al"/>
                                 </constraints>
@@ -209,8 +209,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iO5-c9-ChV">
-                                <rect key="frame" x="20" y="615.5" width="374" height="45"/>
-                                <color key="backgroundColor" red="0.25656804439999997" green="0.57562088970000003" blue="0.93729478119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="20" y="630.5" width="374" height="45"/>
+                                <color key="backgroundColor" red="0.51637595889999999" green="0.78783518080000003" blue="0.8039283156" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="vbD-Zb-Zjq"/>
                                 </constraints>
@@ -222,18 +222,35 @@
                                     <action selector="registerUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kyr-L8-59D"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="fNA-LZ-a83">
+                                <rect key="frame" x="107" y="175.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="KLm-J9-QxJ"/>
+                                    <constraint firstAttribute="width" constant="200" id="gfG-IH-puR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discount Discover" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lof-9x-co2">
+                                <rect key="frame" x="96" y="344.5" width="222" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="fNA-LZ-a83" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AzX-at-gzu"/>
                             <constraint firstItem="Tur-SF-bVd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="IE2-UF-nKK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="g8b-Lw-Wpx" secondAttribute="trailing" constant="20" id="IUf-qL-bVh"/>
                             <constraint firstItem="YkA-7P-kjo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="JJq-r5-a56"/>
-                            <constraint firstItem="g8b-Lw-Wpx" firstAttribute="top" secondItem="Tur-SF-bVd" secondAttribute="bottom" constant="25" id="RAY-Ff-IBL"/>
+                            <constraint firstItem="g8b-Lw-Wpx" firstAttribute="top" secondItem="Tur-SF-bVd" secondAttribute="bottom" constant="40" id="RAY-Ff-IBL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YkA-7P-kjo" secondAttribute="trailing" constant="20" id="SiZ-hA-aW8"/>
                             <constraint firstItem="YkA-7P-kjo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TbS-Uf-HQK"/>
+                            <constraint firstItem="lof-9x-co2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tcf-Ye-jjo"/>
+                            <constraint firstItem="YkA-7P-kjo" firstAttribute="top" secondItem="lof-9x-co2" secondAttribute="bottom" constant="45" id="VBD-sM-kc6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tur-SF-bVd" secondAttribute="trailing" constant="20" id="bdW-d6-ZZi"/>
                             <constraint firstItem="iO5-c9-ChV" firstAttribute="top" secondItem="g8b-Lw-Wpx" secondAttribute="bottom" constant="15" id="caY-Mu-zZW"/>
+                            <constraint firstItem="YkA-7P-kjo" firstAttribute="top" secondItem="fNA-LZ-a83" secondAttribute="bottom" constant="50" id="gkz-mt-1dr"/>
                             <constraint firstItem="Tur-SF-bVd" firstAttribute="top" secondItem="YkA-7P-kjo" secondAttribute="bottom" constant="15" id="lSs-tk-xla"/>
                             <constraint firstItem="iO5-c9-ChV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="oJ0-5w-Ete"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iO5-c9-ChV" secondAttribute="trailing" constant="20" id="twu-ma-iDa"/>
@@ -321,6 +338,7 @@
     </scenes>
     <resources>
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
+        <image name="logo" width="1500" height="1500"/>
         <image name="mappin.circle" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
     </resources>
