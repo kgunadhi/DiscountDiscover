@@ -95,32 +95,24 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
 ### Models
 #### Deal - from DiscountAPI
 
-   | Property      | Type     | Description |
-   | ------------- | -------- | ------------|
-   | id            | Number   | unique id for the deal |
-   | title         | String   | title of deal |
-   | description   | String   | description of deal |
-   | fine_print    | String   | "fine print" details of deal |
-   | url           | String   | url of deal |
-   | category_name | String   | category of deal |
-   | category_slug | String   | category slug of deal |
-   | image_url     | String   | url of deal's image |
-   | expiresAt     | DateTime | date when deal expires |
-   | merchant      | Pointer to Merchant | merchant of deal |
-   
-#### Merchant - from DiscountAPI
-
-   | Property      | Type     | Description |
-   | ------------- | -------- | ------------|
-   | id            | Number   | unique id for the merchant |
-   | name          | String   | name of merchant |
-   | address       | String   | address of merchant |
+   | Property        | Type       | Description |
+   | --------------- | ---------- | ------------|
+   | name            | String     | name of deal |
+   | description     | String     | description of deal |
+   | finePrint       | String     | "fine print" details of deal |
+   | url             | URL        | url of deal |
+   | category        | String     | category of deal |
+   | imageUrl        | URL        | url of deal's image |
+   | expiresAt       | DateTime   | date when deal expires |
+   | storeName       | String     | store provider of deal |
+   | storeAddress    | String     | address of store |
+   | storeCoordinate | Coordinate | coordinate of store |
    
 #### User - from Parse
 
    | Property      | Type     | Description |
    | ------------- | -------- | ------------|
-   | objectId            | Number   | unique id for the user |
+   | objectId      | Number   | unique id for the user |
    | username      | String   | username of user |
    | password      | String   | password of user |
    | email         | String   | email of user |
