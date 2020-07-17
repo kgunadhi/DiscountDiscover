@@ -9,6 +9,7 @@
 #import "DealsViewController.h"
 #import "DealCell.h"
 #import "APIManager.h"
+#import "DetailsViewController.h"
 
 @interface DealsViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -41,7 +42,7 @@
     const int sectionInsets = 20;
     
     const CGFloat itemWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing - sectionInsets) / 2;
-    const CGFloat itemHeight = itemWidth;
+    const CGFloat itemHeight = itemWidth * 1.5;
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
 }
 
@@ -80,15 +81,17 @@
     return self.deals.count;
 }
 
-
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    // Details view segue
+    UITableViewCell *tappedCell = sender;
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell:tappedCell];
+    Deal *deal = self.deals[indexPath.row];
+    
+    DetailsViewController *detailsViewController = [segue destinationViewController];
+    detailsViewController.deal = deal;
 }
-*/
 
 @end
