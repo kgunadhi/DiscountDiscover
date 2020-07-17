@@ -15,7 +15,7 @@
 
     NSDictionary *deal = dictionary[@"deal"];
     self.name = deal[@"title"];
-    self.description = deal[@"description"];
+//    self.description = deal[@"description"];
     self.finePrint = deal[@"fine_print"];
     self.url = [NSURL URLWithString:deal[@"url"]];
     self.category = deal[@"category_name"];
