@@ -29,6 +29,7 @@
     
     [self fetchDeals];
     
+    // add refresh control
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchDeals) forControlEvents:UIControlEventValueChanged];
     [self.collectionView insertSubview:self.refreshControl atIndex:0];
@@ -40,32 +41,40 @@
     layout.minimumInteritemSpacing = 10;
     layout.minimumLineSpacing = 10;
     const int sectionInsets = 20;
+    const int dealsPerLine = 2;
     
-    const CGFloat itemWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing - sectionInsets) / 2;
+    const CGFloat itemWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing - sectionInsets) / dealsPerLine;
     const CGFloat itemHeight = itemWidth * 1.5;
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
 }
 
 - (void)fetchDeals {
-//    [self.activityIndicator startAnimating];
+    APIManager *manager = [[APIManager alloc] init];
     __weak DealsViewController *weakSelf = self;
-    APIManager *manager = [APIManager new];
     [manager fetchDeals:^(NSArray<Deal *> *deals, NSError *error) {
+        DealsViewController *strongSelf = weakSelf;
         if (error != nil) {
-            UIAlertController *networkAlert = [UIAlertController alertControllerWithTitle:@"Cannot Get Deals" message:@"The Internet connection appears to be offline." preferredStyle:(UIAlertControllerStyleAlert)];
-            UIAlertAction *reloadAction = [UIAlertAction actionWithTitle:@"Try Again" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [weakSelf fetchDeals];
-            }];
-            [networkAlert addAction:reloadAction];
-            [self presentViewController:networkAlert animated:YES completion:^{}];
+            [strongSelf showNetworkErrorAlert];
         }
         else {
-            self.deals = deals;
-            [self.collectionView reloadData];
+            strongSelf.deals = deals;
+            [strongSelf.collectionView reloadData];
         }
-//        [self.activityIndicator stopAnimating];
-        [self.refreshControl endRefreshing];
+        [strongSelf.refreshControl endRefreshing];
     }];
+}
+
+- (void)showNetworkErrorAlert {
+    UIAlertController *networkAlert = [UIAlertController alertControllerWithTitle:@"Cannot Get Deals" message:@"The Internet connection appears to be offline." preferredStyle:(UIAlertControllerStyleAlert)];
+    
+    __weak DealsViewController *weakSelf = self;
+    UIAlertAction *reloadAction = [UIAlertAction actionWithTitle:@"Try Again" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        DealsViewController *strongSelf = weakSelf;
+        [strongSelf fetchDeals];
+    }];
+    [networkAlert addAction:reloadAction];
+    
+    [self presentViewController:networkAlert animated:YES completion:^{}];
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
@@ -85,8 +94,9 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
     // Details view segue
-    UITableViewCell *tappedCell = sender;
+    UICollectionViewCell *tappedCell = sender;
     NSIndexPath *indexPath = [self.collectionView indexPathForCell:tappedCell];
     Deal *deal = self.deals[indexPath.row];
     

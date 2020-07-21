@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CLLocationCoordinate2D storeCoordinate;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
-+ (NSArray *)dealsWithDictionaries:(NSArray *)dictionaries;
++ (NSArray<Deal *> *)dealsWithDictionaries:(NSArray<NSDictionary *> *)dictionaries;
 
 @end
 

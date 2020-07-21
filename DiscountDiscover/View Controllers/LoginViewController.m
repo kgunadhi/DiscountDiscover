@@ -41,31 +41,17 @@
     newUser.username = self.usernameField.text;
     newUser.password = self.passwordField.text;
     
-    UIAlertController *emptyAlert = [UIAlertController alertControllerWithTitle:@"Invalid Username or Password"
-           message:@"Username or password field is empty."
-    preferredStyle:(UIAlertControllerStyleAlert)];
-    
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
-                                                       style:UIAlertActionStyleDefault
-                                                     handler:^(UIAlertAction * _Nonnull action) {}];
-
-    [emptyAlert addAction:okAction];
-    
     if ([self.usernameField.text isEqual:@""] || [self.passwordField.text isEqual:@""]) {
-        [self presentViewController:emptyAlert animated:YES completion:nil];
+        [self showErrorAlert:@"Invalid Entry" message:@"Username or password field is empty."];
     } else {
-        // call sign up function on the object
+        // call sign up function on the user
+        __weak LoginViewController *weakSelf = self;
         [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
+            LoginViewController *strongSelf = weakSelf;
             if (error != nil) {
-                NSLog(@"Error: %@", error.localizedDescription);
-                
-                UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:@"Sign Up Error"
-                                                                                    message:error.localizedDescription
-                preferredStyle:(UIAlertControllerStyleAlert)];
-                [errorAlert addAction:okAction];
-                [self presentViewController:errorAlert animated:YES completion:nil];
+                [strongSelf showErrorAlert:@"Sign Up Error" message:error.localizedDescription];
             } else {
-                [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+                [strongSelf performSegueWithIdentifier:@"loginSegue" sender:nil];
             }
         }];
     }
@@ -75,20 +61,26 @@
     NSString *username = self.usernameField.text;
     NSString *password = self.passwordField.text;
     
+    __weak LoginViewController *weakSelf = self;
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
+        LoginViewController *strongSelf = weakSelf;
         if (error != nil) {
-            UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:@"Login Error"
-                                                                                message:error.localizedDescription
-            preferredStyle:(UIAlertControllerStyleAlert)];
-            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
-                                                                  style:UIAlertActionStyleDefault
-                                                                handler:^(UIAlertAction * _Nonnull action) {}];
-            [errorAlert addAction:okAction];
-            [self presentViewController:errorAlert animated:YES completion:nil];
+            [strongSelf showErrorAlert:@"Login Error" message:error.localizedDescription];
         } else {
-            [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+            [strongSelf performSegueWithIdentifier:@"loginSegue" sender:nil];
         }
     }];
+}
+
+- (void)showErrorAlert:(NSString *)title message:(NSString *)message {
+    UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:title
+                                                                        message:message
+    preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+      style:UIAlertActionStyleDefault
+    handler:^(UIAlertAction * _Nonnull action) {}];
+    [errorAlert addAction:okAction];
+    [self presentViewController:errorAlert animated:YES completion:nil];
 }
 
 /*

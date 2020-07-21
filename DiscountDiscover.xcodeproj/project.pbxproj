@@ -121,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				9B7FF63224BD18CA00204BC1 /* Deal.h */,
-				9B7FF63624BD1AAF00204BC1 /* APIManager.m */,
 				9B7FF63324BD18CA00204BC1 /* Deal.m */,
 			);
 			path = Models;
@@ -157,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				9B7FF63524BD1AAF00204BC1 /* APIManager.h */,
+				9B7FF63624BD1AAF00204BC1 /* APIManager.m */,
 			);
 			path = API;
 			sourceTree = "<group>";

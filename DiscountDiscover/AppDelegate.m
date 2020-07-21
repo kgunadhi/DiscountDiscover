@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Parse/Parse.h"
+#import "APIManager.h"
 @import GoogleMaps;
 
 @interface AppDelegate ()
@@ -19,6 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    // Parse
     ParseClientConfiguration *config = [ParseClientConfiguration   configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
         
         configuration.applicationId = @"discountDiscover";
@@ -27,11 +29,8 @@
     
     [Parse initializeWithConfiguration:config];
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:
-                    @"APIKeys" ofType:@"plist"];
-    NSDictionary *plist = [[NSDictionary alloc] initWithContentsOfFile:path];
-    NSString *apiKey = [plist valueForKey:@"GoogleAPIKey"];
-    [GMSServices provideAPIKey:apiKey];
+    // Google Maps
+    [GMSServices provideAPIKey:[APIManager getAPIKey:@"GoogleAPIKey"]];
     
     return YES;
 }
@@ -45,13 +44,5 @@
     // Use this method to select a configuration to create the new scene with.
     return [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];
 }
-
-
-- (void)application:(UIApplication *)application didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions {
-    // Called when the user discards a scene session.
-    // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-    // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-}
-
 
 @end

@@ -17,11 +17,6 @@
 
 @implementation ProfileViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
-
 - (IBAction)logoutUser:(id)sender {
     SceneDelegate *sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
         
