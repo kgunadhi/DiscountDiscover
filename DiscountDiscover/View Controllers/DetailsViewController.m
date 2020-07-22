@@ -14,6 +14,12 @@
 @property (weak, nonatomic) IBOutlet UIImageView *dealImageView;
 @property (weak, nonatomic) IBOutlet UILabel *storeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *expiresLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *finePrintLabel;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 
 @end
 
@@ -24,6 +30,11 @@
    
     self.storeLabel.text = self.deal.storeName;
     self.nameLabel.text = self.deal.name;
+    self.categoryLabel.text = self.deal.category;
+    self.expiresLabel.text = self.deal.expiresAt;
+    self.descriptionLabel.text = self.deal.dealDescription;
+    self.finePrintLabel.text = self.deal.finePrint;
+    self.addressLabel.text = self.deal.storeAddress;
     
     if (self.deal.imageUrl != nil) {
         [self.dealImageView setImageWithURL:self.deal.imageUrl];

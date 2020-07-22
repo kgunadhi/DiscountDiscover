@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Deal : NSObject
 
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *dealDescription;
 @property (nonatomic, strong) NSString *finePrint;
 @property (nonatomic, strong) NSURL *url;
 @property (nonatomic, strong) NSString *category;

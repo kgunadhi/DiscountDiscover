@@ -11,20 +11,21 @@
 @implementation Deal
 
 - (id)initWithDictionary:(NSDictionary *)dictionary {
+    
     self = [super init];
 
     NSDictionary *deal = dictionary[@"deal"];
     self.name = deal[@"title"];
-    self.description = deal[@"description"];
+    self.dealDescription = deal[@"description"];
     self.finePrint = deal[@"fine_print"];
     self.url = [NSURL URLWithString:deal[@"url"]];
     self.category = deal[@"category_name"];
     self.imageUrl = [NSURL URLWithString:deal[@"image_url"]];
-    self.expiresAt = deal[@"expiresAt"];
+    self.expiresAt = [self formatExpiresAtString:deal];
     
     NSDictionary *store = deal[@"merchant"];
     self.storeName = store[@"name"];
-    self.storeAddress = store[@"address"];
+    self.storeAddress = [NSString stringWithFormat:@"%@\n%@, %@ %@", store[@"address"], store[@"locality"], store[@"region"], store[@"postal_code"]];
     double latitude = [store[@"latitude"] doubleValue];
     double longitude = [store[@"longitude"] doubleValue];
     self.storeCoordinate = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude].coordinate;
@@ -32,7 +33,27 @@
     return self;
 }
 
+- (NSString *)formatExpiresAtString:(NSDictionary *)dictionary {
+    
+    NSString *expiresAtOriginalString = dictionary[@"expires_at"];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    // configure the input format to parse the date string
+    formatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZ";
+    // convert String to Date
+    NSDate *date = [formatter dateFromString:expiresAtOriginalString];
+    // configure output format
+    formatter.dateStyle = NSDateFormatterShortStyle;
+    formatter.timeStyle = NSDateFormatterShortStyle;
+    // convert Date to String
+    NSString *expiresAtString = [formatter stringFromDate:date];
+    if (expiresAtString == nil) {
+        expiresAtString = @"N/A";
+    }
+    return [@"Expires: " stringByAppendingString:expiresAtString];
+}
+
 + (NSArray<Deal *> *)dealsWithDictionaries:(NSArray<NSDictionary *> *)dictionaries {
+    
     NSMutableArray<Deal *> *deals = [NSMutableArray<Deal *> array];
     for (NSDictionary *dictionary in dictionaries) {
         Deal *deal = [[Deal alloc] initWithDictionary:dictionary];
