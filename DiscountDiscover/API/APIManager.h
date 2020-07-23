@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+#import "Deal.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface APIManager : NSObject
 
-- (void)fetchDeals:(void(^)(NSArray *deals, NSError *error))completion;
+- (void)fetchDeals:(void(^)(NSArray<Deal *> *deals, NSError *error))completion;
++ (CLLocationCoordinate2D)getLocationCoordinate;
++ (NSString *)getAPIKey:(NSString *)key;
 
 @end
 

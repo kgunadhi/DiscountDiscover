@@ -12,12 +12,10 @@
 @implementation DealCell
 
 - (void)setDeal:(Deal *)deal {
-    // Set underlying private storage _movie since replacing default setter
     _deal = deal;
 
     self.nameLabel.text = self.deal.name;
     self.storeLabel.text = self.deal.storeName;
-    // self.distanceLabel.text = calculate distance;
     
     [self.nameLabel sizeToFit];
     [self.storeLabel sizeToFit];
@@ -27,12 +25,15 @@
         [self.dealImageView setImageWithURL:self.deal.imageUrl];
     }
     
+    [self cardStyling];
+}
+
+- (void)cardStyling {
     self.contentView.layer.cornerRadius = 7;
     self.contentView.layer.backgroundColor = [UIColor whiteColor].CGColor;
     self.contentView.layer.borderWidth = 1.0f;
     self.contentView.layer.borderColor = [UIColor clearColor].CGColor;
     self.contentView.layer.masksToBounds = YES;
-
     
     self.layer.shadowColor = [UIColor blackColor].CGColor;
     self.layer.shadowOffset = CGSizeMake(0, 2.0f);

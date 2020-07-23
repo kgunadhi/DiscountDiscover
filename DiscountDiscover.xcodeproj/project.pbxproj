@@ -20,6 +20,7 @@
 		9B7FF63724BD1AAF00204BC1 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7FF63624BD1AAF00204BC1 /* APIManager.m */; };
 		9B7FF63924BE6A2F00204BC1 /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B7FF63824BE6A2E00204BC1 /* APIKeys.plist */; };
 		9B7FF63C24BF59C800204BC1 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7FF63B24BF59C800204BC1 /* MapViewController.m */; };
+		9BE0C9D424C7C3B800C92377 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE0C9D324C7C3B800C92377 /* WebViewController.m */; };
 		9BE7983424C11E5300715249 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7983324C11E5300715249 /* LoginViewController.m */; };
 		9BE7983724C1210000715249 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7983624C1210000715249 /* ProfileViewController.m */; };
 		9BE7983A24C2589B00715249 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7983924C2589B00715249 /* DetailsViewController.m */; };
@@ -50,6 +51,8 @@
 		9B7FF63824BE6A2E00204BC1 /* APIKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
 		9B7FF63A24BF59C800204BC1 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		9B7FF63B24BF59C800204BC1 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		9BE0C9D224C7C3B800C92377 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		9BE0C9D324C7C3B800C92377 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		9BE7983224C11E5300715249 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		9BE7983324C11E5300715249 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		9BE7983524C1210000715249 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
@@ -121,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				9B7FF63224BD18CA00204BC1 /* Deal.h */,
-				9B7FF63624BD1AAF00204BC1 /* APIManager.m */,
 				9B7FF63324BD18CA00204BC1 /* Deal.m */,
 			);
 			path = Models;
@@ -149,6 +151,8 @@
 				9BE7983624C1210000715249 /* ProfileViewController.m */,
 				9BE7983824C2589B00715249 /* DetailsViewController.h */,
 				9BE7983924C2589B00715249 /* DetailsViewController.m */,
+				9BE0C9D224C7C3B800C92377 /* WebViewController.h */,
+				9BE0C9D324C7C3B800C92377 /* WebViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -157,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				9B7FF63524BD1AAF00204BC1 /* APIManager.h */,
+				9B7FF63624BD1AAF00204BC1 /* APIManager.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -310,6 +315,7 @@
 				9B7FF63C24BF59C800204BC1 /* MapViewController.m in Sources */,
 				9BE7983724C1210000715249 /* ProfileViewController.m in Sources */,
 				9B7FF63124BD18B200204BC1 /* DealCell.m in Sources */,
+				9BE0C9D424C7C3B800C92377 /* WebViewController.m in Sources */,
 				9BE7983424C11E5300715249 /* LoginViewController.m in Sources */,
 				9B7FF63724BD1AAF00204BC1 /* APIManager.m in Sources */,
 				9B7FF61D24BD129A00204BC1 /* main.m in Sources */,
