@@ -25,7 +25,7 @@
     
     NSDictionary *store = deal[@"merchant"];
     self.storeName = store[@"name"];
-    self.storeAddress = [NSString stringWithFormat:@"%@\n%@, %@ %@", store[@"address"], store[@"locality"], store[@"region"], store[@"postal_code"]];
+    self.storeAddress = [self formatStoreAddressString:store];
     double latitude = [store[@"latitude"] doubleValue];
     double longitude = [store[@"longitude"] doubleValue];
     self.storeCoordinate = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude].coordinate;
@@ -50,6 +50,16 @@
         expiresAtString = @"N/A";
     }
     return [@"Expires: " stringByAppendingString:expiresAtString];
+}
+
+- (NSString *)formatStoreAddressString:(NSDictionary *)dictionary {
+    if (dictionary[@"address"] && dictionary[@"locality"] && dictionary[@"region"] && dictionary[@"postal_code"]) {
+        return [NSString stringWithFormat:@"%@\n%@, %@ %@", dictionary[@"address"], dictionary[@"locality"], dictionary[@"region"], dictionary[@"postal_code"]];
+    } else if (dictionary[@"address"] && dictionary[@"locality"] && dictionary[@"region"]) {
+        return [NSString stringWithFormat:@"%@\n%@, %@", dictionary[@"address"], dictionary[@"locality"], dictionary[@"region"]];
+    } else {
+        return @"N/A";
+    }
 }
 
 + (NSArray<Deal *> *)dealsWithDictionaries:(NSArray<NSDictionary *> *)dictionaries {

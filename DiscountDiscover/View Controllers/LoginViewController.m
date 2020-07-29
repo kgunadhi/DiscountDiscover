@@ -35,13 +35,12 @@
     NSString *username = self.usernameField.text;
     NSString *password = self.passwordField.text;
     
-    __weak LoginViewController *weakSelf = self;
+    __weak typeof(self) weakSelf = self;
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
-        LoginViewController *strongSelf = weakSelf;
         if (error != nil) {
-            [strongSelf showErrorAlert:@"Login Error" message:error.localizedDescription];
+            [weakSelf showErrorAlert:@"Login Error" message:error.localizedDescription];
         } else {
-            [strongSelf performSegueWithIdentifier:@"loginSegue" sender:nil];
+            [weakSelf performSegueWithIdentifier:@"loginSegue" sender:nil];
         }
     }];
 }

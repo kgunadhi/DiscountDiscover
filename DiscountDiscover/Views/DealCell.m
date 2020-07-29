@@ -9,7 +9,19 @@
 #import "DealCell.h"
 #import "UIImageView+AFNetworking.h"
 
+@interface DealCell ()
+
+@property (nonatomic) BOOL cardStyled;
+
+@end
+
 @implementation DealCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    self.cardStyled = NO;
+}
 
 - (void)setDeal:(Deal *)deal {
     _deal = deal;
@@ -25,7 +37,10 @@
         [self.dealImageView setImageWithURL:self.deal.imageUrl];
     }
     
-    [self cardStyling];
+    if (self.cardStyled == NO) {
+        [self cardStyling];
+        self.cardStyled = YES;
+    }
 }
 
 - (void)cardStyling {
