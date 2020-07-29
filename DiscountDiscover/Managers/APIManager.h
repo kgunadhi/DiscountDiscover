@@ -16,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (id)initWithParameters:(double)radius;
 - (void)fetchDeals:(void(^)(NSArray<Deal *> *deals, NSError *error))completion;
-+ (CLLocationCoordinate2D)getLocationCoordinate;
 + (NSString *)getAPIKey:(NSString *)key;
 
 @end
