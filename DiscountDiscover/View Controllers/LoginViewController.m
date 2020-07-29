@@ -36,13 +36,15 @@
     NSString *password = self.passwordField.text;
     
     __weak typeof(self) weakSelf = self;
-    [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
-        if (error != nil) {
-            [weakSelf showErrorAlert:@"Login Error" message:error.localizedDescription];
-        } else {
-            [weakSelf performSegueWithIdentifier:@"loginSegue" sender:nil];
-        }
-    }];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
+            if (error != nil) {
+                [weakSelf showErrorAlert:@"Login Error" message:error.localizedDescription];
+            } else {
+                [weakSelf performSegueWithIdentifier:@"loginSegue" sender:nil];
+            }
+        }];
+    });
 }
 
 @end
