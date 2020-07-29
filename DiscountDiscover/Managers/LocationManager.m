@@ -23,6 +23,8 @@
     }
     
     [self.locationManager startUpdatingLocation];
+    self.currentLocation = self.locationManager.location;
+    self.currentLocationCoordinate = self.currentLocation.coordinate;
 
     return self;
 }
