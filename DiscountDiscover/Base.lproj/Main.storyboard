@@ -37,7 +37,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="P8b-qX-ACA">
-                                <rect key="frame" x="0.0" y="56" width="414" height="703"/>
+                                <rect key="frame" x="0.0" y="95" width="414" height="664"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jft-SX-5tc">
                                     <size key="itemSize" width="239" height="264"/>
@@ -104,11 +104,23 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wW0-8G-pBI">
+                                <rect key="frame" x="15" y="64" width="88" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <state key="normal" title="    Distance    ">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="filterDistance:" destination="xxO-ml-mfv" eventType="touchUpInside" id="h9y-or-G5m"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="wW0-8G-pBI" firstAttribute="top" secondItem="tol-KQ-Ber" secondAttribute="top" constant="8" id="JRS-Fo-8hB"/>
                             <constraint firstItem="P8b-qX-ACA" firstAttribute="leading" secondItem="tol-KQ-Ber" secondAttribute="leading" id="j0z-1f-Hd3"/>
-                            <constraint firstItem="P8b-qX-ACA" firstAttribute="top" secondItem="tol-KQ-Ber" secondAttribute="top" id="tG7-AK-j1g"/>
+                            <constraint firstItem="P8b-qX-ACA" firstAttribute="top" secondItem="wW0-8G-pBI" secondAttribute="bottom" constant="2" id="mbc-Qu-8Gs"/>
+                            <constraint firstItem="wW0-8G-pBI" firstAttribute="leading" secondItem="tol-KQ-Ber" secondAttribute="leading" constant="15" id="sit-qO-5WG"/>
                             <constraint firstItem="tol-KQ-Ber" firstAttribute="bottom" secondItem="P8b-qX-ACA" secondAttribute="bottom" id="u2m-QV-do1"/>
                             <constraint firstItem="tol-KQ-Ber" firstAttribute="trailing" secondItem="P8b-qX-ACA" secondAttribute="trailing" id="xmM-Sd-D1N"/>
                         </constraints>
@@ -117,6 +129,7 @@
                     <navigationItem key="navigationItem" title="Deals" id="iYb-Lu-We0"/>
                     <connections>
                         <outlet property="collectionView" destination="P8b-qX-ACA" id="VXe-xa-dev"/>
+                        <outlet property="distanceButton" destination="wW0-8G-pBI" id="PGO-1U-uw1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nQb-PJ-GhC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

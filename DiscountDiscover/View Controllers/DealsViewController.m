@@ -10,12 +10,16 @@
 #import "DealCell.h"
 #import "APIManager.h"
 #import "DetailsViewController.h"
+#import "ActionSheetPicker.h"
 
 @interface DealsViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray<Deal *> *deals;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (weak, nonatomic) IBOutlet UIButton *distanceButton;
+@property (nonatomic) double radius;
+@property (nonatomic) int selectedIndex;
 
 @end
 
@@ -26,6 +30,13 @@
     
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
+    
+    // distance filter
+    self.distanceButton.layer.cornerRadius = 15;
+    self.distanceButton.layer.borderWidth = 1.0f;
+    self.distanceButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.radius = 5;
+    self.selectedIndex = 3;
     
     [self fetchDeals];
     
@@ -49,7 +60,7 @@
 }
 
 - (void)fetchDeals {
-    APIManager *manager = [[APIManager alloc] init];
+    APIManager *manager = [[APIManager alloc] initWithParameters:self.radius];
     __weak typeof(self) weakSelf = self;
     [manager fetchDeals:^(NSArray<Deal *> *deals, NSError *error) {
         __strong typeof(self) strongSelf = weakSelf;
@@ -76,6 +87,23 @@
     [networkAlert addAction:reloadAction];
     
     [self presentViewController:networkAlert animated:YES completion:^{}];
+}
+
+- (IBAction)filterDistance:(id)sender {
+    NSArray<NSNumber *> *const distances = @[@(0.5), @(1), @(2), @(5), @(10), @(20)];
+
+    __weak typeof(self) weakSelf = self;
+    ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+        __strong typeof(self) strongSelf = weakSelf;
+        if (strongSelf) {
+            strongSelf.radius = [selectedValue doubleValue];
+            strongSelf.selectedIndex = selectedIndex;
+            [strongSelf fetchDeals];
+        }
+    };
+    ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {};
+    
+    [ActionSheetStringPicker showPickerWithTitle:@"Distance" rows:distances initialSelection:self.selectedIndex doneBlock:done cancelBlock:cancel origin:sender];
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {

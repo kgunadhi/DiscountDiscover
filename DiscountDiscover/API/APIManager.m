@@ -11,26 +11,28 @@
 @interface APIManager() <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) NSURLSession *session;
+@property (nonatomic) double radius;
 
 @end
 
 @implementation APIManager
 
-- (id)init {
+- (id)initWithParameters:(double)radius {
     self = [super init];
 
     self.session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    self.radius = radius;
 
     return self;
 }
 
 - (void)fetchDeals:(void(^)(NSArray<Deal *> *deals, NSError *error))completion {
     
-    NSString *const baseURL = @"https://api.discountapi.com/v2/deals?api_key=%@&location=%f,%f&radius=5";
+    NSString *const baseURL = @"https://api.discountapi.com/v2/deals?api_key=%@&location=%f,%f&radius=%f";
     NSString *apiKey = [APIManager getAPIKey:@"DiscountAPIKey"];
     CLLocationCoordinate2D locationCoordinate = [APIManager getLocationCoordinate];
     
-    NSString *urlString = [NSString stringWithFormat:baseURL, apiKey, locationCoordinate.latitude, locationCoordinate.longitude];
+    NSString *urlString = [NSString stringWithFormat:baseURL, apiKey, locationCoordinate.latitude, locationCoordinate.longitude, self.radius];
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     NSURLSessionDataTask *task = [self.session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
