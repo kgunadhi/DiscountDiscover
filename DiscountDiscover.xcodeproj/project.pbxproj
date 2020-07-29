@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		83179277317F3C324A695F67 /* Pods_DiscountDiscover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A22BCCF83CE85DDC406631F /* Pods_DiscountDiscover.framework */; };
+		9B45B6AF24D1C67200D24A4D /* UIViewController+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B45B6AE24D1C67200D24A4D /* UIViewController+Error.m */; };
 		9B7FF60C24BD129900204BC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7FF60B24BD129900204BC1 /* AppDelegate.m */; };
 		9B7FF60F24BD129900204BC1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7FF60E24BD129900204BC1 /* SceneDelegate.m */; };
 		9B7FF61524BD129900204BC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7FF61324BD129900204BC1 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		9B7FF63924BE6A2F00204BC1 /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B7FF63824BE6A2E00204BC1 /* APIKeys.plist */; };
 		9B7FF63C24BF59C800204BC1 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7FF63B24BF59C800204BC1 /* MapViewController.m */; };
 		9BE0C9D424C7C3B800C92377 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE0C9D324C7C3B800C92377 /* WebViewController.m */; };
+		9BE0C9D724CA4B2700C92377 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE0C9D624CA4B2700C92377 /* SignUpViewController.m */; };
 		9BE7983424C11E5300715249 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7983324C11E5300715249 /* LoginViewController.m */; };
 		9BE7983724C1210000715249 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7983624C1210000715249 /* ProfileViewController.m */; };
 		9BE7983A24C2589B00715249 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7983924C2589B00715249 /* DetailsViewController.m */; };
@@ -30,6 +32,8 @@
 		0A22BCCF83CE85DDC406631F /* Pods_DiscountDiscover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiscountDiscover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		381E150A9F801512FAF0D429 /* Pods-DiscountDiscover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiscountDiscover.release.xcconfig"; path = "Target Support Files/Pods-DiscountDiscover/Pods-DiscountDiscover.release.xcconfig"; sourceTree = "<group>"; };
 		4CDFA65310EE43BA0E0D84D5 /* Pods-DiscountDiscover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiscountDiscover.debug.xcconfig"; path = "Target Support Files/Pods-DiscountDiscover/Pods-DiscountDiscover.debug.xcconfig"; sourceTree = "<group>"; };
+		9B45B6AD24D1C67200D24A4D /* UIViewController+Error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Error.h"; sourceTree = "<group>"; };
+		9B45B6AE24D1C67200D24A4D /* UIViewController+Error.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Error.m"; sourceTree = "<group>"; };
 		9B7FF60724BD129900204BC1 /* DiscountDiscover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscountDiscover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B7FF60A24BD129900204BC1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9B7FF60B24BD129900204BC1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 		9B7FF63B24BF59C800204BC1 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		9BE0C9D224C7C3B800C92377 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		9BE0C9D324C7C3B800C92377 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		9BE0C9D524CA4B2700C92377 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		9BE0C9D624CA4B2700C92377 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		9BE7983224C11E5300715249 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		9BE7983324C11E5300715249 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		9BE7983524C1210000715249 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
@@ -153,6 +159,10 @@
 				9BE7983924C2589B00715249 /* DetailsViewController.m */,
 				9BE0C9D224C7C3B800C92377 /* WebViewController.h */,
 				9BE0C9D324C7C3B800C92377 /* WebViewController.m */,
+				9BE0C9D524CA4B2700C92377 /* SignUpViewController.h */,
+				9BE0C9D624CA4B2700C92377 /* SignUpViewController.m */,
+				9B45B6AD24D1C67200D24A4D /* UIViewController+Error.h */,
+				9B45B6AE24D1C67200D24A4D /* UIViewController+Error.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -309,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B7FF62E24BD16DC00204BC1 /* DealsViewController.m in Sources */,
+				9B45B6AF24D1C67200D24A4D /* UIViewController+Error.m in Sources */,
 				9B7FF63424BD18CA00204BC1 /* Deal.m in Sources */,
 				9BE7983A24C2589B00715249 /* DetailsViewController.m in Sources */,
 				9B7FF60C24BD129900204BC1 /* AppDelegate.m in Sources */,
@@ -319,6 +330,7 @@
 				9BE7983424C11E5300715249 /* LoginViewController.m in Sources */,
 				9B7FF63724BD1AAF00204BC1 /* APIManager.m in Sources */,
 				9B7FF61D24BD129A00204BC1 /* main.m in Sources */,
+				9BE0C9D724CA4B2700C92377 /* SignUpViewController.m in Sources */,
 				9B7FF60F24BD129900204BC1 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
