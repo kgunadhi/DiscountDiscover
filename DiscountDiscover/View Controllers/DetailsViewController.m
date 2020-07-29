@@ -32,6 +32,7 @@
     self.storeLabel.text = self.deal.storeName;
     self.nameLabel.text = self.deal.name;
     self.categoryLabel.text = self.deal.category;
+    self.distanceLabel.text = self.deal.distance;
     self.expiresLabel.text = self.deal.expiresAt;
     self.descriptionLabel.text = self.deal.dealDescription;
     self.finePrintLabel.text = self.deal.finePrint;

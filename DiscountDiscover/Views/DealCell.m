@@ -28,6 +28,7 @@
 
     self.nameLabel.text = self.deal.name;
     self.storeLabel.text = self.deal.storeName;
+    self.distanceLabel.text = self.deal.distance;
     
     [self.nameLabel sizeToFit];
     [self.storeLabel sizeToFit];

@@ -10,5 +10,6 @@ target 'DiscountDiscover' do
   pod 'Parse/UI'
   pod 'AFNetworking'
   pod 'GoogleMaps', '~> 3.10.0-beta'
+  pod 'ActionSheetPicker-3.0'
 
 end

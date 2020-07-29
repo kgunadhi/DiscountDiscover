@@ -37,7 +37,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="P8b-qX-ACA">
-                                <rect key="frame" x="0.0" y="56" width="414" height="703"/>
+                                <rect key="frame" x="0.0" y="95" width="414" height="664"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jft-SX-5tc">
                                     <size key="itemSize" width="239" height="264"/>
@@ -104,11 +104,23 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wW0-8G-pBI">
+                                <rect key="frame" x="15" y="64" width="88" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <state key="normal" title="    Distance    ">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="filterDistance:" destination="xxO-ml-mfv" eventType="touchUpInside" id="h9y-or-G5m"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="wW0-8G-pBI" firstAttribute="top" secondItem="tol-KQ-Ber" secondAttribute="top" constant="8" id="JRS-Fo-8hB"/>
                             <constraint firstItem="P8b-qX-ACA" firstAttribute="leading" secondItem="tol-KQ-Ber" secondAttribute="leading" id="j0z-1f-Hd3"/>
-                            <constraint firstItem="P8b-qX-ACA" firstAttribute="top" secondItem="tol-KQ-Ber" secondAttribute="top" id="tG7-AK-j1g"/>
+                            <constraint firstItem="P8b-qX-ACA" firstAttribute="top" secondItem="wW0-8G-pBI" secondAttribute="bottom" constant="2" id="mbc-Qu-8Gs"/>
+                            <constraint firstItem="wW0-8G-pBI" firstAttribute="leading" secondItem="tol-KQ-Ber" secondAttribute="leading" constant="15" id="sit-qO-5WG"/>
                             <constraint firstItem="tol-KQ-Ber" firstAttribute="bottom" secondItem="P8b-qX-ACA" secondAttribute="bottom" id="u2m-QV-do1"/>
                             <constraint firstItem="tol-KQ-Ber" firstAttribute="trailing" secondItem="P8b-qX-ACA" secondAttribute="trailing" id="xmM-Sd-D1N"/>
                         </constraints>
@@ -117,6 +129,7 @@
                     <navigationItem key="navigationItem" title="Deals" id="iYb-Lu-We0"/>
                     <connections>
                         <outlet property="collectionView" destination="P8b-qX-ACA" id="VXe-xa-dev"/>
+                        <outlet property="distanceButton" destination="wW0-8G-pBI" id="PGO-1U-uw1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nQb-PJ-GhC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -155,8 +168,8 @@
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="· 1.2 mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U49-qg-E5R">
-                                                <rect key="frame" x="78" y="357.5" width="44" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.2 mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U49-qg-E5R">
+                                                <rect key="frame" x="86" y="357.5" width="36.5" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -207,6 +220,12 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="·" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vj5-s7-r7S">
+                                                <rect key="frame" x="78" y="357.5" width="4" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -223,7 +242,7 @@
                                             <constraint firstItem="YoV-eT-qnH" firstAttribute="top" secondItem="mWw-Q2-qfe" secondAttribute="top" id="GNh-MV-Q9h"/>
                                             <constraint firstItem="Pcg-tS-70P" firstAttribute="top" secondItem="HqZ-03-sVx" secondAttribute="bottom" constant="10" id="LeD-ZX-PrQ"/>
                                             <constraint firstItem="A97-uv-msZ" firstAttribute="leading" secondItem="vKd-mU-ejK" secondAttribute="leading" id="Q5b-5H-aoc"/>
-                                            <constraint firstItem="U49-qg-E5R" firstAttribute="leading" secondItem="A97-uv-msZ" secondAttribute="trailing" constant="4" id="Rmg-fu-VM2"/>
+                                            <constraint firstItem="Vj5-s7-r7S" firstAttribute="leading" secondItem="A97-uv-msZ" secondAttribute="trailing" constant="4" id="Qvc-74-F1w"/>
                                             <constraint firstItem="7JL-hN-EVc" firstAttribute="top" secondItem="YRA-9D-Yqh" secondAttribute="bottom" constant="10" id="U0h-KB-SKs"/>
                                             <constraint firstItem="vKd-mU-ejK" firstAttribute="leading" secondItem="qpe-YG-gUb" secondAttribute="leading" constant="15" id="WOM-Tf-kHY"/>
                                             <constraint firstItem="YoV-eT-qnH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mWw-Q2-qfe" secondAttribute="trailing" constant="10" id="XWd-1A-Cxh"/>
@@ -232,6 +251,8 @@
                                             <constraint firstItem="Q3z-e5-goc" firstAttribute="leading" secondItem="qpe-YG-gUb" secondAttribute="leading" id="ddG-J5-Te4"/>
                                             <constraint firstItem="HqZ-03-sVx" firstAttribute="top" secondItem="7JL-hN-EVc" secondAttribute="bottom" constant="8" id="ePc-yb-3wH"/>
                                             <constraint firstItem="mWw-Q2-qfe" firstAttribute="leading" secondItem="vKd-mU-ejK" secondAttribute="leading" id="fTT-H4-lEa"/>
+                                            <constraint firstItem="Vj5-s7-r7S" firstAttribute="centerY" secondItem="A97-uv-msZ" secondAttribute="centerY" id="hiO-el-ObL"/>
+                                            <constraint firstItem="U49-qg-E5R" firstAttribute="leading" secondItem="Vj5-s7-r7S" secondAttribute="trailing" constant="4" id="l3i-nC-Yip"/>
                                             <constraint firstItem="mWw-Q2-qfe" firstAttribute="top" secondItem="Pcg-tS-70P" secondAttribute="bottom" constant="15" id="lpg-0z-Q6R"/>
                                             <constraint firstItem="YRA-9D-Yqh" firstAttribute="top" secondItem="A97-uv-msZ" secondAttribute="bottom" constant="10" id="oU2-nj-M7B"/>
                                             <constraint firstItem="zJP-Sx-YGN" firstAttribute="centerY" secondItem="YRA-9D-Yqh" secondAttribute="centerY" id="qMc-Gd-q6p"/>

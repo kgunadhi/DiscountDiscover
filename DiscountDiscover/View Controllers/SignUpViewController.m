@@ -49,21 +49,23 @@
     } else {
         // call sign up function on the user
         __weak typeof(self) weakSelf = self;
-        [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
-            if (error != nil) {
-                [weakSelf showErrorAlert:@"Sign Up Error" message:error.localizedDescription];
-            } else {
-                [weakSelf performSegueWithIdentifier:@"signupSegue" sender:nil];
-            }
-        }];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
+                if (error != nil) {
+                    [weakSelf showErrorAlert:@"Sign Up Error" message:error.localizedDescription];
+                } else {
+                    [weakSelf performSegueWithIdentifier:@"signupSegue" sender:nil];
+                }
+            }];
+        });
     }
 }
 
 - (BOOL)emptyField {
-    if ([self.emailField.text isEqual:@""]
-        || [self.nameField.text isEqual:@""]
-        || [self.usernameField.text isEqual:@""]
-        || [self.passwordField.text isEqual:@""]) {
+    if (self.emailField.text.length == 0
+        || self.nameField.text.length == 0
+        || self.usernameField.text.length == 0
+        || self.passwordField.text.length == 0) {
         return YES;
     }
     return NO;

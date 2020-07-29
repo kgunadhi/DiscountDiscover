@@ -10,6 +10,7 @@
 		83179277317F3C324A695F67 /* Pods_DiscountDiscover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A22BCCF83CE85DDC406631F /* Pods_DiscountDiscover.framework */; };
 		9B45B6AF24D1C67200D24A4D /* UIViewController+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B45B6AE24D1C67200D24A4D /* UIViewController+Error.m */; };
 		9B45B6B224D1D1BC00D24A4D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B45B6B124D1D1BC00D24A4D /* User.m */; };
+		9B45B6B524D21DEA00D24A4D /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B45B6B424D21DEA00D24A4D /* LocationManager.m */; };
 		9B7FF60C24BD129900204BC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7FF60B24BD129900204BC1 /* AppDelegate.m */; };
 		9B7FF60F24BD129900204BC1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7FF60E24BD129900204BC1 /* SceneDelegate.m */; };
 		9B7FF61524BD129900204BC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7FF61324BD129900204BC1 /* Main.storyboard */; };
@@ -37,6 +38,8 @@
 		9B45B6AE24D1C67200D24A4D /* UIViewController+Error.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Error.m"; sourceTree = "<group>"; };
 		9B45B6B024D1D1BC00D24A4D /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		9B45B6B124D1D1BC00D24A4D /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		9B45B6B324D21DEA00D24A4D /* LocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		9B45B6B424D21DEA00D24A4D /* LocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 		9B7FF60724BD129900204BC1 /* DiscountDiscover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscountDiscover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B7FF60A24BD129900204BC1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9B7FF60B24BD129900204BC1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -115,7 +118,7 @@
 				9B7FF60B24BD129900204BC1 /* AppDelegate.m */,
 				9B7FF60D24BD129900204BC1 /* SceneDelegate.h */,
 				9B7FF60E24BD129900204BC1 /* SceneDelegate.m */,
-				9B7FF62824BD14EA00204BC1 /* API */,
+				9B7FF62824BD14EA00204BC1 /* Managers */,
 				9B7FF62324BD14BB00204BC1 /* Models */,
 				9B7FF62624BD14D400204BC1 /* View Controllers */,
 				9B7FF62524BD14D000204BC1 /* Views */,
@@ -172,13 +175,15 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		9B7FF62824BD14EA00204BC1 /* API */ = {
+		9B7FF62824BD14EA00204BC1 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				9B7FF63524BD1AAF00204BC1 /* APIManager.h */,
 				9B7FF63624BD1AAF00204BC1 /* APIManager.m */,
+				9B45B6B324D21DEA00D24A4D /* LocationManager.h */,
+				9B45B6B424D21DEA00D24A4D /* LocationManager.m */,
 			);
-			path = API;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		C2E094C375649F66A4077CBC /* Pods */ = {
@@ -323,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B45B6B524D21DEA00D24A4D /* LocationManager.m in Sources */,
 				9B7FF62E24BD16DC00204BC1 /* DealsViewController.m in Sources */,
 				9B45B6AF24D1C67200D24A4D /* UIViewController+Error.m in Sources */,
 				9B7FF63424BD18CA00204BC1 /* Deal.m in Sources */,

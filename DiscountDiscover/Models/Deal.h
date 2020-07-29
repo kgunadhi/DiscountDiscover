@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *finePrint;
 @property (nonatomic, strong) NSURL *url;
 @property (nonatomic, strong) NSString *category;
+@property (nonatomic, strong) NSString *distance;
 @property (nonatomic, strong) NSURL *imageUrl;
 @property (nonatomic, strong) NSString *expiresAt;
 @property (nonatomic, strong) NSString *storeName;
