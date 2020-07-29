@@ -7,6 +7,7 @@ target 'DiscountDiscover' do
 
   # Pods for DiscountDiscover
   pod 'Parse'
+  pod 'Parse/UI'
   pod 'AFNetworking'
   pod 'GoogleMaps', '~> 3.10.0-beta'
 

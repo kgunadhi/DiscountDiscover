@@ -24,11 +24,14 @@ PODS:
     - Parse/Core (= 1.18.0)
   - Parse/Core (1.18.0):
     - Bolts/Tasks (= 1.9.1)
+  - Parse/UI (1.18.0):
+    - Parse/Core
 
 DEPENDENCIES:
   - AFNetworking
   - GoogleMaps (~> 3.10.0-beta)
   - Parse
+  - Parse/UI
 
 SPEC REPOS:
   trunk:
@@ -43,6 +46,6 @@ SPEC CHECKSUMS:
   GoogleMaps: 17598f733b70288939758dad9bafd7dfeab3c1dc
   Parse: 79bdda34fdb7eb2a707a43a951c8aae236cb3e34
 
-PODFILE CHECKSUM: 68eeffcc437632817e5b386d9627b8e41954886f
+PODFILE CHECKSUM: 1ecf9778f875ff6df8ab39608e286286d9e866fc
 
 COCOAPODS: 1.9.3

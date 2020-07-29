@@ -50,27 +50,28 @@
 
 - (void)fetchDeals {
     APIManager *manager = [[APIManager alloc] init];
-    __weak DealsViewController *weakSelf = self;
+    __weak typeof(self) weakSelf = self;
     [manager fetchDeals:^(NSArray<Deal *> *deals, NSError *error) {
-        DealsViewController *strongSelf = weakSelf;
-        if (error != nil) {
-            [strongSelf showNetworkErrorAlert];
+        __strong typeof(self) strongSelf = weakSelf;
+        if (strongSelf) {
+            if (error != nil) {
+                [strongSelf showNetworkErrorAlert];
+            }
+            else {
+                strongSelf.deals = deals;
+                [strongSelf.collectionView reloadData];
+            }
+            [strongSelf.refreshControl endRefreshing];
         }
-        else {
-            strongSelf.deals = deals;
-            [strongSelf.collectionView reloadData];
-        }
-        [strongSelf.refreshControl endRefreshing];
     }];
 }
 
 - (void)showNetworkErrorAlert {
     UIAlertController *networkAlert = [UIAlertController alertControllerWithTitle:@"Cannot Get Deals" message:@"The Internet connection appears to be offline." preferredStyle:(UIAlertControllerStyleAlert)];
     
-    __weak DealsViewController *weakSelf = self;
+    __weak typeof(self) weakSelf = self;
     UIAlertAction *reloadAction = [UIAlertAction actionWithTitle:@"Try Again" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        DealsViewController *strongSelf = weakSelf;
-        [strongSelf fetchDeals];
+        [weakSelf fetchDeals];
     }];
     [networkAlert addAction:reloadAction];
     
