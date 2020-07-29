@@ -7,6 +7,7 @@
 //
 
 #import "Deal.h"
+#import "LocationManager.h"
 
 @implementation Deal
 
@@ -28,7 +29,13 @@
     self.storeAddress = [self formatStoreAddressString:store];
     double latitude = [store[@"latitude"] doubleValue];
     double longitude = [store[@"longitude"] doubleValue];
-    self.storeCoordinate = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude].coordinate;
+    CLLocation *storeLocation = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
+    self.storeCoordinate = storeLocation.coordinate;
+    
+    CLLocation *currentLocation = [LocationManager sharedLocationManager].currentLocation;
+    CLLocationDistance distance = [currentLocation distanceFromLocation:storeLocation];
+    // convert from meters to miles
+    self.distance = [NSString stringWithFormat:@"%.1f mi", distance / 1609.344];
 
     return self;
 }
