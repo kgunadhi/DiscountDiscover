@@ -7,7 +7,7 @@
 //
 
 #import "SceneDelegate.h"
-#import <Parse/Parse.h>
+#import "User.h"
 
 @interface SceneDelegate ()
 
@@ -19,7 +19,7 @@
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
     
     // user session persistence
-    PFUser *user = [PFUser currentUser];
+    User *user = [User currentUser];
     if (user) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         UIViewController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];

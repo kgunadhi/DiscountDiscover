@@ -9,7 +9,7 @@
 #import "ProfileViewController.h"
 #import "SceneDelegate.h"
 #import "LoginViewController.h"
-#import <Parse/Parse.h>
+#import "User.h"
 @import Parse;
 
 @interface ProfileViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *preferencesLabel;
-@property (nonatomic, strong) PFUser *user;
+@property (nonatomic, strong) User *user;
 
 @end
 
@@ -28,14 +28,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    self.user = [PFUser currentUser];
-    self.nameLabel.text = self.user[@"name"];
+    self.user = [User currentUser];
+    self.nameLabel.text = self.user.name;
     self.usernameLabel.text = [@"@" stringByAppendingString:self.user.username];
     self.emailLabel.text = self.user.email;
-    self.preferencesLabel.text = self.user[@"preferences"];
+    self.preferencesLabel.text = [self.user.preferences componentsJoinedByString:@"\n"];
     
-    if (self.user[@"profileImage"]) {
-        self.profileView.file = self.user[@"profileImage"];
+    if (self.user.profileImage) {
+        self.profileView.file = self.user.profileImage;
         [self.profileView loadInBackground];
     }
     self.profileView.layer.cornerRadius = self.profileView.frame.size.width / 2;
@@ -63,7 +63,7 @@
     UIImage *resizedImage = [self resizeImage:editedImage withSize: CGSizeMake(500, 500)];
 
     self.profileView.image = resizedImage;
-    self.user[@"profileImage"] = [ProfileViewController getPFFileFromImage:resizedImage];
+    self.user.profileImage = [ProfileViewController getPFFileFromImage:resizedImage];
     [self.user saveInBackground];
     
     // dismiss UIImagePickerController to go back to your original view controller
@@ -72,17 +72,12 @@
 
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
     
-    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:size];
+    UIImage *resizedImage = [renderer imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull context) {
+        [image drawInRect:(CGRect) {.origin = CGPointZero, .size = size}];
+    }];
     
-    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
-    resizeImageView.image = image;
-    
-    UIGraphicsBeginImageContext(size);
-    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return newImage;
+    return resizedImage;
 }
 
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {

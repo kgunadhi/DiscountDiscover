@@ -7,7 +7,7 @@
 //
 
 #import "SignUpViewController.h"
-#import <Parse/Parse.h>
+#import "User.h"
 #import "LoginViewController.h"
 #import "UIViewController+Error.h"
 
@@ -36,11 +36,11 @@
 
 - (IBAction)registerUser:(id)sender {
     // initialize a user object
-    PFUser *newUser = [PFUser user];
+    User *newUser = [User user];
     
     // set user properties
     newUser.email = self.emailField.text;
-    newUser[@"name"] = self.nameField.text;
+    newUser.name = self.nameField.text;
     newUser.username = self.usernameField.text;
     newUser.password = self.passwordField.text;
     
@@ -48,13 +48,12 @@
         [self showErrorAlert:@"Invalid Entry" message:@"Please complete all fields."];
     } else {
         // call sign up function on the user
-        __weak SignUpViewController *weakSelf = self;
+        __weak typeof(self) weakSelf = self;
         [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
-            SignUpViewController *strongSelf = weakSelf;
             if (error != nil) {
-                [strongSelf showErrorAlert:@"Sign Up Error" message:error.localizedDescription];
+                [weakSelf showErrorAlert:@"Sign Up Error" message:error.localizedDescription];
             } else {
-                [strongSelf performSegueWithIdentifier:@"signupSegue" sender:nil];
+                [weakSelf performSegueWithIdentifier:@"signupSegue" sender:nil];
             }
         }];
     }
