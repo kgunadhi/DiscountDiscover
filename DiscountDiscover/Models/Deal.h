@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import <GoogleMaps/GoogleMaps.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -24,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *storeName;
 @property (nonatomic, strong) NSString *storeAddress;
 @property (nonatomic) CLLocationCoordinate2D storeCoordinate;
+@property (nonatomic, strong) GMSMarker *marker;
+
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 + (NSArray<Deal *> *)dealsWithDictionaries:(NSArray<NSDictionary *> *)dictionaries;

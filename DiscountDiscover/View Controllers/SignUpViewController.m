@@ -49,15 +49,15 @@
     } else {
         // call sign up function on the user
         __weak typeof(self) weakSelf = self;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
+        [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
                 if (error != nil) {
                     [weakSelf showErrorAlert:@"Sign Up Error" message:error.localizedDescription];
                 } else {
                     [weakSelf performSegueWithIdentifier:@"signupSegue" sender:nil];
                 }
-            }];
-        });
+            });
+        }];
     }
 }
 

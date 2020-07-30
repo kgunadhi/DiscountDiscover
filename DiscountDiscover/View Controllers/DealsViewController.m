@@ -11,8 +11,10 @@
 #import "APIManager.h"
 #import "DetailsViewController.h"
 #import "ActionSheetPicker.h"
+#import "LocationManager.h"
+#import "MapViewController.h"
 
-@interface DealsViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface DealsViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UITabBarControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray<Deal *> *deals;
@@ -30,6 +32,7 @@
     
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
+    self.tabBarController.delegate = self;
     
     // distance filter
     self.distanceButton.layer.cornerRadius = 15;
@@ -60,9 +63,9 @@
 }
 
 - (void)fetchDeals {
-    APIManager *manager = [[APIManager alloc] initWithParameters:self.radius];
+    APIManager *manager = [[APIManager alloc] init];
     __weak typeof(self) weakSelf = self;
-    [manager fetchDeals:^(NSArray<Deal *> *deals, NSError *error) {
+    [manager fetchDeals:self.radius completion:^(NSArray<Deal *> *deals, NSError *error) {
         __strong typeof(self) strongSelf = weakSelf;
         if (strongSelf) {
             if (error != nil) {
@@ -75,6 +78,17 @@
             [strongSelf.refreshControl endRefreshing];
         }
     }];
+}
+
+-(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    
+    if ([viewController.restorationIdentifier isEqual: @"MapNavigationController"]) {
+        UINavigationController *nc = (UINavigationController *)viewController;
+        MapViewController *vc = (MapViewController *)nc.topViewController;
+        vc.deals = self.deals;
+    }
+    
+    return YES;
 }
 
 - (void)showNetworkErrorAlert {
@@ -101,9 +115,9 @@
             [strongSelf fetchDeals];
         }
     };
-    ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {};
+    ActionStringCancelBlock cancel = nil;
     
-    [ActionSheetStringPicker showPickerWithTitle:@"Distance" rows:distances initialSelection:self.selectedIndex doneBlock:done cancelBlock:cancel origin:sender];
+    [ActionSheetStringPicker showPickerWithTitle:@"Distance (mi)" rows:distances initialSelection:self.selectedIndex doneBlock:done cancelBlock:cancel origin:sender];
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {

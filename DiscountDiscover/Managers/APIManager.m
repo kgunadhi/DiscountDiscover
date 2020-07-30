@@ -9,25 +9,23 @@
 #import "APIManager.h"
 #import "LocationManager.h"
 
-@interface APIManager() <CLLocationManagerDelegate>
+@interface APIManager()
 
 @property (nonatomic, strong) NSURLSession *session;
-@property (nonatomic) double radius;
 
 @end
 
 @implementation APIManager
 
-- (id)initWithParameters:(double)radius {
+- (id)init {
     self = [super init];
 
     self.session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
-    self.radius = radius;
 
     return self;
 }
 
-- (void)fetchDeals:(void(^)(NSArray<Deal *> *deals, NSError *error))completion {
+- (void)fetchDeals:(double)radius completion:(void(^)(NSArray<Deal *> *deals, NSError *error))completion {
     
     // get API key and location coordinate for request
     NSString *const baseURL = @"https://api.discountapi.com/v2/deals?api_key=%@&location=%f,%f&radius=%f";
@@ -35,7 +33,7 @@
     CLLocationCoordinate2D locationCoordinate = [LocationManager sharedLocationManager].currentLocationCoordinate;
     
     // put together URL and send request to API
-    NSString *urlString = [NSString stringWithFormat:baseURL, apiKey, locationCoordinate.latitude, locationCoordinate.longitude, self.radius];
+    NSString *urlString = [NSString stringWithFormat:baseURL, apiKey, locationCoordinate.latitude, locationCoordinate.longitude, radius];
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     NSURLSessionDataTask *task = [self.session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
