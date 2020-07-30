@@ -31,11 +31,18 @@
     [self.view addSubview:self.mapView];
     
     self.mapView.delegate = self;
-    
+
+    [self addDealMarkers];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+
     [self addDealMarkers];
 }
 
 - (void)addDealMarkers {
+    [self.mapView clear];
     for (Deal *deal in self.deals) {
         deal.marker.map = self.mapView;
     }
