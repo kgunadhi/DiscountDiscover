@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "Parse/Parse.h"
 #import "APIManager.h"
+#import "LocationManager.h"
 @import GoogleMaps;
 
 @interface AppDelegate ()
@@ -19,6 +20,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // start updating location
+    [LocationManager sharedLocationManager];
     
     // Parse
     ParseClientConfiguration *config = [ParseClientConfiguration   configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
