@@ -11,8 +11,10 @@
 #import "APIManager.h"
 #import "DetailsViewController.h"
 #import "ActionSheetPicker.h"
+#import "LocationManager.h"
+#import "MapViewController.h"
 
-@interface DealsViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface DealsViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UITabBarControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray<Deal *> *deals;
@@ -28,8 +30,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    LocationManager *l = [[LocationManager alloc] init];
+    
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
+    self.tabBarController.delegate = self;
     
     // distance filter
     self.distanceButton.layer.cornerRadius = 15;
@@ -75,6 +80,17 @@
             [strongSelf.refreshControl endRefreshing];
         }
     }];
+}
+
+-(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    
+    if ([viewController.restorationIdentifier isEqual: @"MapNavigationController"]) {
+        UINavigationController *nc = (UINavigationController *)viewController;
+        MapViewController *vc = (MapViewController *)nc.topViewController;
+        vc.deals = self.deals;
+    }
+    
+    return YES;
 }
 
 - (void)showNetworkErrorAlert {

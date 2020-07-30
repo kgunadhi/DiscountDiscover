@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GoogleMaps/GoogleMaps.h>
+#import "Deal.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MapViewController : UIViewController
+
+@property (nonatomic, strong) NSArray<Deal *> *deals;
 
 @end
 

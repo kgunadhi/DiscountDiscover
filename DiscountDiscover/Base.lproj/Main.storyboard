@@ -785,7 +785,7 @@
         <!--Map-->
         <scene sceneID="Q6I-Ow-e6a">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7id-ck-RIo" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="MapNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="7id-ck-RIo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="mappin.circle" catalog="system" selectedImage="mappin.circle.fill" id="3Ud-fS-K33"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fuV-EI-hFx">
@@ -824,7 +824,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Hhf-ya-ISp"/>
+        <segue reference="8Xr-Vg-U7L"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="add-image" width="1500" height="1500"/>

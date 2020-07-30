@@ -36,6 +36,8 @@
     CLLocationDistance distance = [currentLocation distanceFromLocation:storeLocation];
     // convert from meters to miles
     self.distance = [NSString stringWithFormat:@"%.1f mi", distance / 1609.344];
+    
+    self.marker = [self createMarker];
 
     return self;
 }
@@ -67,6 +69,13 @@
     } else {
         return @"N/A";
     }
+}
+
+- (GMSMarker *)createMarker {
+    GMSMarker *marker = [GMSMarker markerWithPosition:self.storeCoordinate];
+    marker.title = self.storeName;
+    marker.snippet = self.name;
+    return marker;
 }
 
 + (NSArray<Deal *> *)dealsWithDictionaries:(NSArray<NSDictionary *> *)dictionaries {
