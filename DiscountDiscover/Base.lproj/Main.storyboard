@@ -346,6 +346,9 @@
                         <viewLayoutGuide key="safeArea" id="t5K-0Z-P6Q"/>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="b7B-iJ-40G"/>
+                    <connections>
+                        <segue destination="VpB-dq-Dcv" kind="show" identifier="detailsSegue" id="9Dd-sa-gXJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSe-zX-Yy7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -824,6 +827,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="9Dd-sa-gXJ"/>
         <segue reference="8Xr-Vg-U7L"/>
     </inferredMetricsTieBreakers>
     <resources>
