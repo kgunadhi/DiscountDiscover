@@ -41,7 +41,7 @@
     return sharedLocationManager;
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     
     self.currentLocation = [locations lastObject];
     self.currentLocationCoordinate = self.currentLocation.coordinate;

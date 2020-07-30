@@ -30,8 +30,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    LocationManager *l = [[LocationManager alloc] init];
-    
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     self.tabBarController.delegate = self;
@@ -65,9 +63,9 @@
 }
 
 - (void)fetchDeals {
-    APIManager *manager = [[APIManager alloc] initWithParameters:self.radius];
+    APIManager *manager = [[APIManager alloc] init];
     __weak typeof(self) weakSelf = self;
-    [manager fetchDeals:^(NSArray<Deal *> *deals, NSError *error) {
+    [manager fetchDeals:self.radius completion:^(NSArray<Deal *> *deals, NSError *error) {
         __strong typeof(self) strongSelf = weakSelf;
         if (strongSelf) {
             if (error != nil) {
@@ -117,9 +115,9 @@
             [strongSelf fetchDeals];
         }
     };
-    ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {};
+    ActionStringCancelBlock cancel = nil;
     
-    [ActionSheetStringPicker showPickerWithTitle:@"Distance" rows:distances initialSelection:self.selectedIndex doneBlock:done cancelBlock:cancel origin:sender];
+    [ActionSheetStringPicker showPickerWithTitle:@"Distance (mi)" rows:distances initialSelection:self.selectedIndex doneBlock:done cancelBlock:cancel origin:sender];
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {

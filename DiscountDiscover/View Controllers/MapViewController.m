@@ -7,7 +7,6 @@
 //
 
 #import "MapViewController.h"
-#import "APIManager.h"
 #import <CoreLocation/CoreLocation.h>
 #import "LocationManager.h"
 #import "DetailsViewController.h"

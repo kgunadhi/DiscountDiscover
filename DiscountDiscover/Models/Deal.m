@@ -34,8 +34,7 @@
     
     CLLocation *currentLocation = [LocationManager sharedLocationManager].currentLocation;
     CLLocationDistance distance = [currentLocation distanceFromLocation:storeLocation];
-    // convert from meters to miles
-    self.distance = [NSString stringWithFormat:@"%.1f mi", distance / 1609.344];
+    self.distance = [self formatDistanceString:distance];
     
     self.marker = [self createMarker];
 
@@ -69,6 +68,11 @@
     } else {
         return @"N/A";
     }
+}
+
+- (NSString *)formatDistanceString:(CLLocationDistance)distance {
+    double const metersInMile = 1609.344;
+    return [NSString stringWithFormat:@"%.1f mi", distance / metersInMile];
 }
 
 - (GMSMarker *)createMarker {

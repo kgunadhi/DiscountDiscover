@@ -14,8 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APIManager : NSObject
 
-- (id)initWithParameters:(double)radius;
-- (void)fetchDeals:(void(^)(NSArray<Deal *> *deals, NSError *error))completion;
+- (id)init;
+- (void)fetchDeals:(double)radius completion:(void(^)(NSArray<Deal *> *deals, NSError *error))completion;
 + (NSString *)getAPIKey:(NSString *)key;
 
 @end
