@@ -16,9 +16,8 @@
     self.locationManager = [[CLLocationManager alloc] init];
     [self.locationManager setDelegate:self];
     
-    if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedWhenInUse) {
-        [self.locationManager requestWhenInUseAuthorization];
-    }
+    [self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager requestAlwaysAuthorization];
     
     [self.locationManager startMonitoringSignificantLocationChanges];
 

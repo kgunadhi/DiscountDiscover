@@ -7,12 +7,16 @@
 //
 
 #import "AppDelegate.h"
+#import "SceneDelegate.h"
 #import "Parse/Parse.h"
 #import "APIManager.h"
 #import "LocationManager.h"
+#import "DetailsViewController.h"
+#import <UserNotifications/UserNotifications.h>
+#import <BackgroundTasks/BackgroundTasks.h>
 @import GoogleMaps;
 
-@interface AppDelegate ()
+@interface AppDelegate () <UNUserNotificationCenterDelegate>
 
 @end
 
@@ -36,9 +40,52 @@
     // Google Maps
     [GMSServices provideAPIKey:[APIManager getAPIKey:@"GoogleAPIKey"]];
     
+    // notification authorization
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert) completionHandler:^(BOOL granted, NSError * _Nullable error) {}];
+    
+    // background fetch frequency restriction
+    const int minimumTime = 10800; // 3 hours
+    [application setMinimumBackgroundFetchInterval:minimumTime];
+    
+    [UNUserNotificationCenter currentNotificationCenter].delegate = self;
+    
     return YES;
 }
 
+-(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
+    
+    APIManager *manager = [[APIManager alloc] init];
+    [manager fetchNearbyDeal:^(Deal *deal, UIBackgroundFetchResult result) {
+        if (deal != nil) {
+            [self scheduleNotification:deal];
+        }
+        completionHandler(result);
+    }];
+}
+
+-(void)scheduleNotification:(Deal *)deal {
+    
+    // configure notification content
+    UNMutableNotificationContent* content = [[UNMutableNotificationContent alloc] init];
+    content.title = [NSString localizedUserNotificationStringForKey:@"Nearby Deal" arguments:nil];
+    NSString *body = [NSString stringWithFormat:@"%@: %@", deal.storeName, deal.name];
+    content.body = [NSString localizedUserNotificationStringForKey:body
+            arguments:nil];
+    NSData *dealData = [NSKeyedArchiver archivedDataWithRootObject:deal requiringSecureCoding:NO error:nil];
+    content.userInfo = @{@"Deal": dealData};
+     
+    // create trigger
+    UNTimeIntervalNotificationTrigger* trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:5 repeats:NO];
+    
+    // create request with content and trigger
+    UNNotificationRequest* request = [UNNotificationRequest
+           requestWithIdentifier:@"NearbyDeal" content:content trigger:trigger];
+     
+    // add request to notification center
+    UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
+    [center addNotificationRequest:request withCompletionHandler:nil];
+}
 
 #pragma mark - UISceneSession lifecycle
 

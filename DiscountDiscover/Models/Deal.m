@@ -92,4 +92,34 @@
     return deals;
 }
 
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeObject:self.name forKey:@"dealName"];
+    [encoder encodeObject:self.dealDescription forKey:@"name"];
+    [encoder encodeObject:self.finePrint forKey:@"finePrint"];
+    [encoder encodeObject:self.url forKey:@"url"];
+    [encoder encodeObject:self.category forKey:@"category"];
+    [encoder encodeObject:self.imageUrl forKey:@"imageUrl"];
+    [encoder encodeObject:self.expiresAt forKey:@"expiresAt"];
+    [encoder encodeObject:self.storeName forKey:@"storeName"];
+    [encoder encodeObject:self.storeAddress forKey:@"storeAddress"];
+    [encoder encodeObject:self.distance forKey:@"distance"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder {
+    if (self = [super init]) {
+        self.name = [decoder decodeObjectForKey:@"dealName"];
+        self.dealDescription = [decoder decodeObjectForKey:@"dealDescription"];
+        self.finePrint = [decoder decodeObjectForKey:@"finePrint"];
+        self.url = [decoder decodeObjectForKey:@"url"];
+        self.category = [decoder decodeObjectForKey:@"category"];
+        self.imageUrl = [decoder decodeObjectForKey:@"imageUrl"];
+        self.expiresAt = [decoder decodeObjectForKey:@"expiresAt"];
+        self.storeName = [decoder decodeObjectForKey:@"storeName"];
+        self.storeAddress = [decoder decodeObjectForKey:@"storeAddress"];
+        self.distance = [decoder decodeObjectForKey:@"distance"];
+    }
+    
+    return self;
+}
+
 @end
