@@ -43,12 +43,11 @@
     // notification authorization
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
     [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert) completionHandler:^(BOOL granted, NSError * _Nullable error) {}];
+    center.delegate = self;
     
     // background fetch frequency restriction
     const int minimumTime = 10800; // 3 hours
     [application setMinimumBackgroundFetchInterval:minimumTime];
-    
-    [UNUserNotificationCenter currentNotificationCenter].delegate = self;
     
     return YES;
 }
