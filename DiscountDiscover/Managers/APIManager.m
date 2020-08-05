@@ -54,7 +54,7 @@
 }
 
 - (void)fetchNearbyDeal:(void (^)(Deal *deal, UIBackgroundFetchResult result))completionHandler {
-    [self fetchDeals:3 completion:^(NSArray<Deal *> *deals, NSError *error) {
+    [self fetchDeals:0.2 completion:^(NSArray<Deal *> *deals, NSError *error) {
         if (error != nil) {
             completionHandler(nil, UIBackgroundFetchResultFailed);
         } else {
