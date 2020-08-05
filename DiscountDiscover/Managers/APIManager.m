@@ -53,6 +53,21 @@
     [task resume];
 }
 
+- (void)fetchNearbyDeal:(void (^)(Deal *deal, UIBackgroundFetchResult result))completionHandler {
+    [self fetchDeals:0.2 completion:^(NSArray<Deal *> *deals, NSError *error) {
+        if (error != nil) {
+            completionHandler(nil, UIBackgroundFetchResultFailed);
+        } else {
+            if (deals.count != 0) {
+                Deal *deal = deals[1];
+                completionHandler(deal, UIBackgroundFetchResultNewData);
+            } else {
+                completionHandler(nil, UIBackgroundFetchResultNoData);
+            }
+        }
+    }];
+}
+
 + (NSString *)getAPIKey:(NSString *)key {
     NSString *path = [[NSBundle mainBundle] pathForResource:
                     @"APIKeys" ofType:@"plist"];

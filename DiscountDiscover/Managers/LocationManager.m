@@ -15,16 +15,11 @@
 
     self.locationManager = [[CLLocationManager alloc] init];
     [self.locationManager setDelegate:self];
-    [self.locationManager setDistanceFilter:kCLDistanceFilterNone];
-    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     
-    if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedWhenInUse) {
-        [self.locationManager requestWhenInUseAuthorization];
-    }
+    [self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager requestAlwaysAuthorization];
     
-    [self.locationManager startUpdatingLocation];
-    self.currentLocation = self.locationManager.location;
-    self.currentLocationCoordinate = self.currentLocation.coordinate;
+    [self.locationManager startMonitoringSignificantLocationChanges];
 
     return self;
 }
@@ -45,7 +40,6 @@
     
     self.currentLocation = [locations lastObject];
     self.currentLocationCoordinate = self.currentLocation.coordinate;
-    [self.locationManager stopUpdatingLocation];
 }
 
 @end

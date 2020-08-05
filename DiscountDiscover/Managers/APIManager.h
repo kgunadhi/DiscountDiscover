@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (id)init;
 - (void)fetchDeals:(double)radius completion:(void(^)(NSArray<Deal *> *deals, NSError *error))completion;
+- (void)fetchNearbyDeal:(void (^)(Deal *deal, UIBackgroundFetchResult result))completionHandler;
 + (NSString *)getAPIKey:(NSString *)key;
 
 @end

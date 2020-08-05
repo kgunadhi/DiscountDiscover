@@ -84,10 +84,9 @@
     
     if ([viewController.restorationIdentifier isEqual: @"MapNavigationController"]) {
         UINavigationController *nc = (UINavigationController *)viewController;
-        MapViewController *vc = (MapViewController *)nc.topViewController;
+        MapViewController *vc = (MapViewController *)nc.viewControllers[0];
         vc.deals = self.deals;
     }
-    
     return YES;
 }
 
