@@ -87,6 +87,21 @@
     [center addNotificationRequest:request withCompletionHandler:nil];
 }
 
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    DetailsViewController *detailsViewController = [storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
+    
+    NSData *dealData = response.notification.request.content.userInfo[@"Deal"];
+    Deal *deal = [NSKeyedUnarchiver unarchivedObjectOfClass:Deal.class fromData:dealData error:nil];
+    detailsViewController.deal = deal;
+    
+    SceneDelegate *sd = (SceneDelegate *)[UIApplication sharedApplication].connectedScenes.allObjects[0].delegate;
+    UITabBarController *tabController = (UITabBarController *)sd.window.rootViewController;
+    UINavigationController *navController = (UINavigationController *)tabController;
+    [navController pushViewController:detailsViewController animated:YES];
+}
+
 #pragma mark - UISceneSession lifecycle
 
 
