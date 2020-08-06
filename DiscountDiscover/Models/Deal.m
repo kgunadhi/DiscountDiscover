@@ -35,8 +35,6 @@
     CLLocation *currentLocation = [LocationManager sharedLocationManager].currentLocation;
     CLLocationDistance distance = [currentLocation distanceFromLocation:storeLocation];
     self.distance = [self formatDistanceString:distance];
-    
-    self.marker = [self createMarker];
 
     return self;
 }
@@ -75,13 +73,6 @@
     return [NSString stringWithFormat:@"%.1f mi", distance / metersInMile];
 }
 
-- (GMSMarker *)createMarker {
-    GMSMarker *marker = [GMSMarker markerWithPosition:self.storeCoordinate];
-    marker.title = self.storeName;
-    marker.snippet = self.name;
-    return marker;
-}
-
 + (NSArray<Deal *> *)dealsWithDictionaries:(NSArray<NSDictionary *> *)dictionaries {
     
     NSMutableArray<Deal *> *deals = [NSMutableArray<Deal *> array];
@@ -92,9 +83,13 @@
     return deals;
 }
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 - (void)encodeWithCoder:(NSCoder *)encoder {
     [encoder encodeObject:self.name forKey:@"dealName"];
-    [encoder encodeObject:self.dealDescription forKey:@"name"];
+    [encoder encodeObject:self.dealDescription forKey:@"dealDescription"];
     [encoder encodeObject:self.finePrint forKey:@"finePrint"];
     [encoder encodeObject:self.url forKey:@"url"];
     [encoder encodeObject:self.category forKey:@"category"];

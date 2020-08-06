@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CLLocationCoordinate2D currentLocationCoordinate;
 
 + (LocationManager *)sharedLocationManager;
+- (void)startMonitoringLocation;
 
 @end
 

@@ -18,8 +18,6 @@
     
     [self.locationManager requestWhenInUseAuthorization];
     [self.locationManager requestAlwaysAuthorization];
-    
-    [self.locationManager startMonitoringSignificantLocationChanges];
 
     return self;
 }
@@ -34,6 +32,10 @@
     }
 
     return sharedLocationManager;
+}
+
+- (void)startMonitoringLocation {
+    [self.locationManager startMonitoringSignificantLocationChanges];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {

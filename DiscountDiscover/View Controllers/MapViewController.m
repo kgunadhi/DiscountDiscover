@@ -8,8 +8,10 @@
 
 #import "MapViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import <GoogleMaps/GoogleMaps.h>
 #import "LocationManager.h"
 #import "DetailsViewController.h"
+#import "DealMarker.h"
 
 @interface MapViewController () <GMSMapViewDelegate>
 
@@ -43,17 +45,14 @@
 
 - (void)addDealMarkers {
     [self.mapView clear];
-    for (Deal *deal in self.deals) {
-        deal.marker.map = self.mapView;
-    }
+    
+    // create deal markers from deals
+    [DealMarker markersWithDeals:self.deals map:self.mapView];
 }
 
 - (void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker {
     
-    NSUInteger i = [self.deals indexOfObjectPassingTest:^BOOL(Deal *deal, NSUInteger idx, BOOL *stop) {
-        return [deal.name isEqual:marker.snippet];
-    }];
-    Deal *deal = self.deals[i];
+    Deal *deal = marker.userData;
     [self performSegueWithIdentifier:@"detailsSegue" sender:deal];
 }
 
