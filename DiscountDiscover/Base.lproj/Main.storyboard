@@ -214,7 +214,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YoV-eT-qnH">
-                                                <rect key="frame" x="325" y="544" width="74" height="32"/>
+                                                <rect key="frame" x="325" y="519.5" width="74" height="32"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <state key="normal" title="Directions"/>
                                             </button>
@@ -276,7 +276,6 @@
                                             <constraint firstItem="mWw-Q2-qfe" firstAttribute="top" secondItem="l9O-g7-aV8" secondAttribute="bottom" constant="5" id="Eh8-fW-e7O"/>
                                             <constraint firstAttribute="trailing" secondItem="Pcg-tS-70P" secondAttribute="trailing" constant="15" id="Elx-ew-roc"/>
                                             <constraint firstItem="YRA-9D-Yqh" firstAttribute="leading" secondItem="vKd-mU-ejK" secondAttribute="leading" id="Ery-XT-g70"/>
-                                            <constraint firstItem="YoV-eT-qnH" firstAttribute="top" secondItem="mWw-Q2-qfe" secondAttribute="top" id="GNh-MV-Q9h"/>
                                             <constraint firstItem="A97-uv-msZ" firstAttribute="leading" secondItem="vKd-mU-ejK" secondAttribute="leading" id="Q5b-5H-aoc"/>
                                             <constraint firstItem="l9O-g7-aV8" firstAttribute="leading" secondItem="qpe-YG-gUb" secondAttribute="leading" constant="15" id="Q6d-yE-7Vb"/>
                                             <constraint firstItem="Vj5-s7-r7S" firstAttribute="leading" secondItem="A97-uv-msZ" secondAttribute="trailing" constant="4" id="Qvc-74-F1w"/>
@@ -295,6 +294,7 @@
                                             <constraint firstItem="Pcg-tS-70P" firstAttribute="top" secondItem="Qaj-c2-2Lr" secondAttribute="bottom" constant="8" id="nOg-YM-pkH"/>
                                             <constraint firstItem="aN8-Dd-zMN" firstAttribute="leading" secondItem="qpe-YG-gUb" secondAttribute="leading" constant="15" id="pu2-Yp-JZM"/>
                                             <constraint firstItem="zJP-Sx-YGN" firstAttribute="centerY" secondItem="YRA-9D-Yqh" secondAttribute="centerY" id="qMc-Gd-q6p"/>
+                                            <constraint firstItem="YoV-eT-qnH" firstAttribute="top" secondItem="l9O-g7-aV8" secondAttribute="top" id="rVd-Qz-dDB"/>
                                             <constraint firstItem="aN8-Dd-zMN" firstAttribute="top" secondItem="Pcg-tS-70P" secondAttribute="bottom" constant="8" id="sdR-bl-JEB"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mWw-Q2-qfe" secondAttribute="bottom" constant="15" id="uBc-pT-n2F"/>
                                             <constraint firstItem="Q3z-e5-goc" firstAttribute="top" secondItem="qpe-YG-gUb" secondAttribute="top" id="uFR-Lc-Tg1"/>

@@ -28,7 +28,7 @@
 - (void)fetchDealsWithRadius:(double)radius numberOfDeals:(int)number completion:(void(^)(NSArray<Deal *> *deals, NSError *error))completion {
     
     // get API key and location coordinate for request
-    NSString *const baseURL = @"https://api.discountapi.com/v2/deals?api_key=%@&location=%f,%f&radius=%f&per_page=%d&order=distance";
+    NSString *const baseURL = @"https://api.discountapi.com/v2/deals?api_key=%@&location=%f,%f&radius=%f&per_page=%d";
     NSString *apiKey = [APIManager getAPIKey:@"DiscountAPIKey"];
     CLLocationCoordinate2D locationCoordinate = [LocationManager sharedLocationManager].currentLocationCoordinate;
     
