@@ -13,8 +13,9 @@
 #import "ActionSheetPicker.h"
 #import "LocationManager.h"
 #import "MapViewController.h"
+#import <UserNotifications/UserNotifications.h>
 
-@interface DealsViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UITabBarControllerDelegate>
+@interface DealsViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UITabBarControllerDelegate, UNUserNotificationCenterDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray<Deal *> *deals;
@@ -33,6 +34,7 @@
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     self.tabBarController.delegate = self;
+    [UNUserNotificationCenter currentNotificationCenter].delegate = self;
     
     // distance filter
     self.distanceButton.layer.cornerRadius = 15;
@@ -65,7 +67,7 @@
 - (void)fetchDeals {
     APIManager *manager = [[APIManager alloc] init];
     __weak typeof(self) weakSelf = self;
-    [manager fetchDeals:self.radius completion:^(NSArray<Deal *> *deals, NSError *error) {
+    [manager fetchDealsWithRadius:self.radius numberOfDeals:20 completion:^(NSArray<Deal *> *deals, NSError *error) {
         __strong typeof(self) strongSelf = weakSelf;
         if (strongSelf) {
             if (error != nil) {
@@ -84,7 +86,7 @@
     
     if ([viewController.restorationIdentifier isEqual: @"MapNavigationController"]) {
         UINavigationController *nc = (UINavigationController *)viewController;
-        MapViewController *vc = (MapViewController *)nc.viewControllers[0];
+        MapViewController *vc = (MapViewController *)nc.viewControllers.firstObject;
         vc.deals = self.deals;
     }
     return YES;
@@ -130,6 +132,19 @@
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.deals.count;
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+    
+    NSData *dealData = response.notification.request.content.userInfo[@"Deal"];
+    Deal *deal = [NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet setWithArray: @[Deal.class, NSURL.class]] fromData:dealData error:nil];
+
+    if (deal != nil) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        DetailsViewController *detailsViewController = [storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
+        detailsViewController.deal = deal;
+        [self.navigationController pushViewController:detailsViewController animated:YES];
+    }
 }
 
 #pragma mark - Navigation
