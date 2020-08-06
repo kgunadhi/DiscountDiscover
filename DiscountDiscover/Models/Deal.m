@@ -35,8 +35,6 @@
     CLLocation *currentLocation = [LocationManager sharedLocationManager].currentLocation;
     CLLocationDistance distance = [currentLocation distanceFromLocation:storeLocation];
     self.distance = [self formatDistanceString:distance];
-    
-    self.marker = [self createMarker];
 
     return self;
 }
@@ -73,13 +71,6 @@
 - (NSString *)formatDistanceString:(CLLocationDistance)distance {
     double const metersInMile = 1609.344;
     return [NSString stringWithFormat:@"%.1f mi", distance / metersInMile];
-}
-
-- (GMSMarker *)createMarker {
-    GMSMarker *marker = [GMSMarker markerWithPosition:self.storeCoordinate];
-    marker.title = self.storeName;
-    marker.snippet = self.name;
-    return marker;
 }
 
 + (NSArray<Deal *> *)dealsWithDictionaries:(NSArray<NSDictionary *> *)dictionaries {
