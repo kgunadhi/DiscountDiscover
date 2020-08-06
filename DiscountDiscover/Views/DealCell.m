@@ -8,6 +8,7 @@
 
 #import "DealCell.h"
 #import "UIImageView+AFNetworking.h"
+#import <ChameleonFramework/Chameleon.h>
 
 @interface DealCell ()
 
@@ -46,9 +47,12 @@
 
 - (void)cardStyling {
     self.contentView.layer.cornerRadius = 7;
-    self.contentView.layer.backgroundColor = [UIColor whiteColor].CGColor;
     self.contentView.layer.borderWidth = 1.0f;
     self.contentView.layer.borderColor = [UIColor clearColor].CGColor;
+    
+    NSArray *backgroundColors = @[FlatNavyBlue, FlatTeal, FlatPlum, FlatBlue, FlatMintDark, FlatMagentaDark];
+    self.contentView.layer.backgroundColor = RandomFlatColorInArray(backgroundColors).CGColor;
+    
     self.contentView.layer.masksToBounds = YES;
     
     self.layer.shadowColor = [UIColor blackColor].CGColor;

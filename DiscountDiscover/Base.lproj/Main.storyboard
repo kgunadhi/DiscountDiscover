@@ -59,22 +59,22 @@
                                                         <constraint firstAttribute="width" secondItem="Mjv-nw-JLe" secondAttribute="height" multiplier="4:3" id="Dlb-9H-qQh"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="store" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ty3-yr-K8g">
-                                                    <rect key="frame" x="8" y="184.5" width="223" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="store" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ty3-yr-K8g">
+                                                    <rect key="frame" x="8" y="187.5" width="223" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="1 mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHg-hx-QV0">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHg-hx-QV0">
                                                     <rect key="frame" x="106.5" y="239" width="26" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Deal Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgj-WQ-LSw">
-                                                    <rect key="frame" x="8" y="210.5" width="223" height="19.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deal Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgj-WQ-LSw">
+                                                    <rect key="frame" x="8" y="213" width="223" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -87,10 +87,10 @@
                                                 <constraint firstAttribute="trailing" secondItem="kgj-WQ-LSw" secondAttribute="trailing" constant="8" id="JHx-bW-9vm"/>
                                                 <constraint firstItem="Mjv-nw-JLe" firstAttribute="top" secondItem="PdD-nf-Pyo" secondAttribute="top" id="KSp-eT-DzO"/>
                                                 <constraint firstItem="Mjv-nw-JLe" firstAttribute="leading" secondItem="PdD-nf-Pyo" secondAttribute="leading" id="imE-kW-h5k"/>
-                                                <constraint firstItem="ty3-yr-K8g" firstAttribute="top" secondItem="Mjv-nw-JLe" secondAttribute="bottom" constant="2" id="lUf-Kk-xBe"/>
+                                                <constraint firstItem="ty3-yr-K8g" firstAttribute="top" secondItem="Mjv-nw-JLe" secondAttribute="bottom" constant="8" id="lUf-Kk-xBe"/>
                                                 <constraint firstItem="ty3-yr-K8g" firstAttribute="leading" secondItem="PdD-nf-Pyo" secondAttribute="leading" constant="8" id="mVb-VQ-33P"/>
-                                                <constraint firstItem="nHg-hx-QV0" firstAttribute="top" secondItem="kgj-WQ-LSw" secondAttribute="bottom" constant="5" id="pV2-zN-opQ"/>
-                                                <constraint firstItem="kgj-WQ-LSw" firstAttribute="top" secondItem="ty3-yr-K8g" secondAttribute="bottom" constant="2" id="rQU-Qp-XFf"/>
+                                                <constraint firstItem="nHg-hx-QV0" firstAttribute="top" relation="greaterThanOrEqual" secondItem="kgj-WQ-LSw" secondAttribute="bottom" constant="5" id="pV2-zN-opQ"/>
+                                                <constraint firstItem="kgj-WQ-LSw" firstAttribute="top" secondItem="ty3-yr-K8g" secondAttribute="bottom" constant="5" id="rQU-Qp-XFf"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="239" height="264"/>
@@ -106,9 +106,10 @@
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wW0-8G-pBI">
                                 <rect key="frame" x="15" y="64" width="88" height="29"/>
+                                <color key="backgroundColor" red="0.25717604160000002" green="0.4817225933" blue="0.69022148849999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <state key="normal" title="    Distance    ">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="filterDistance:" destination="xxO-ml-mfv" eventType="touchUpInside" id="h9y-or-G5m"/>
@@ -844,7 +845,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9Dd-sa-gXJ"/>
+        <segue reference="pPM-4j-gZh"/>
         <segue reference="8Xr-Vg-U7L"/>
     </inferredMetricsTieBreakers>
     <resources>

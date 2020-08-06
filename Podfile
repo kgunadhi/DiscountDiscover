@@ -11,5 +11,6 @@ target 'DiscountDiscover' do
   pod 'AFNetworking'
   pod 'GoogleMaps', '~> 3.10.0-beta'
   pod 'ActionSheetPicker-3.0'
+  pod 'ChameleonFramework'
 
 end
