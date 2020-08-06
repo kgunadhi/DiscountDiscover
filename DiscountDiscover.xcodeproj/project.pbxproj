@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		83179277317F3C324A695F67 /* Pods_DiscountDiscover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A22BCCF83CE85DDC406631F /* Pods_DiscountDiscover.framework */; };
+		9B054B4024DC583B009ACFD9 /* DealNotificationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B054B3F24DC583B009ACFD9 /* DealNotificationsManager.m */; };
 		9B45B6AF24D1C67200D24A4D /* UIViewController+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B45B6AE24D1C67200D24A4D /* UIViewController+Error.m */; };
 		9B45B6B224D1D1BC00D24A4D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B45B6B124D1D1BC00D24A4D /* User.m */; };
 		9B45B6B524D21DEA00D24A4D /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B45B6B424D21DEA00D24A4D /* LocationManager.m */; };
+		9B45B6B724D33A0700D24A4D /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B45B6B624D33A0700D24A4D /* UserNotifications.framework */; };
+		9B45B6BC24DC46B900D24A4D /* DealMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B45B6BB24DC46B900D24A4D /* DealMarker.m */; };
 		9B7FF60C24BD129900204BC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7FF60B24BD129900204BC1 /* AppDelegate.m */; };
 		9B7FF60F24BD129900204BC1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7FF60E24BD129900204BC1 /* SceneDelegate.m */; };
 		9B7FF61524BD129900204BC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7FF61324BD129900204BC1 /* Main.storyboard */; };
@@ -34,12 +37,18 @@
 		0A22BCCF83CE85DDC406631F /* Pods_DiscountDiscover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiscountDiscover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		381E150A9F801512FAF0D429 /* Pods-DiscountDiscover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiscountDiscover.release.xcconfig"; path = "Target Support Files/Pods-DiscountDiscover/Pods-DiscountDiscover.release.xcconfig"; sourceTree = "<group>"; };
 		4CDFA65310EE43BA0E0D84D5 /* Pods-DiscountDiscover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiscountDiscover.debug.xcconfig"; path = "Target Support Files/Pods-DiscountDiscover/Pods-DiscountDiscover.debug.xcconfig"; sourceTree = "<group>"; };
+		9B054B3E24DC583B009ACFD9 /* DealNotificationsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DealNotificationsManager.h; sourceTree = "<group>"; };
+		9B054B3F24DC583B009ACFD9 /* DealNotificationsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DealNotificationsManager.m; sourceTree = "<group>"; };
 		9B45B6AD24D1C67200D24A4D /* UIViewController+Error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Error.h"; sourceTree = "<group>"; };
 		9B45B6AE24D1C67200D24A4D /* UIViewController+Error.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Error.m"; sourceTree = "<group>"; };
 		9B45B6B024D1D1BC00D24A4D /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		9B45B6B124D1D1BC00D24A4D /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		9B45B6B324D21DEA00D24A4D /* LocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		9B45B6B424D21DEA00D24A4D /* LocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
+		9B45B6B624D33A0700D24A4D /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		9B45B6B824D4C2AA00D24A4D /* BackgroundTasks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BackgroundTasks.framework; path = System/Library/Frameworks/BackgroundTasks.framework; sourceTree = SDKROOT; };
+		9B45B6BA24DC46B900D24A4D /* DealMarker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DealMarker.h; sourceTree = "<group>"; };
+		9B45B6BB24DC46B900D24A4D /* DealMarker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DealMarker.m; sourceTree = "<group>"; };
 		9B7FF60724BD129900204BC1 /* DiscountDiscover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscountDiscover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B7FF60A24BD129900204BC1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9B7FF60B24BD129900204BC1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -78,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B45B6B724D33A0700D24A4D /* UserNotifications.framework in Frameworks */,
 				83179277317F3C324A695F67 /* Pods_DiscountDiscover.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +98,8 @@
 		1A98483766ADB80CCD2D8484 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9B45B6B824D4C2AA00D24A4D /* BackgroundTasks.framework */,
+				9B45B6B624D33A0700D24A4D /* UserNotifications.framework */,
 				0A22BCCF83CE85DDC406631F /* Pods_DiscountDiscover.framework */,
 			);
 			name = Frameworks;
@@ -139,6 +151,8 @@
 				9B7FF63324BD18CA00204BC1 /* Deal.m */,
 				9B45B6B024D1D1BC00D24A4D /* User.h */,
 				9B45B6B124D1D1BC00D24A4D /* User.m */,
+				9B45B6BA24DC46B900D24A4D /* DealMarker.h */,
+				9B45B6BB24DC46B900D24A4D /* DealMarker.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,6 +196,8 @@
 				9B7FF63624BD1AAF00204BC1 /* APIManager.m */,
 				9B45B6B324D21DEA00D24A4D /* LocationManager.h */,
 				9B45B6B424D21DEA00D24A4D /* LocationManager.m */,
+				9B054B3E24DC583B009ACFD9 /* DealNotificationsManager.h */,
+				9B054B3F24DC583B009ACFD9 /* DealNotificationsManager.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -332,6 +348,7 @@
 				9B7FF62E24BD16DC00204BC1 /* DealsViewController.m in Sources */,
 				9B45B6AF24D1C67200D24A4D /* UIViewController+Error.m in Sources */,
 				9B7FF63424BD18CA00204BC1 /* Deal.m in Sources */,
+				9B054B4024DC583B009ACFD9 /* DealNotificationsManager.m in Sources */,
 				9BE7983A24C2589B00715249 /* DetailsViewController.m in Sources */,
 				9B7FF60C24BD129900204BC1 /* AppDelegate.m in Sources */,
 				9B45B6B224D1D1BC00D24A4D /* User.m in Sources */,
@@ -339,6 +356,7 @@
 				9BE7983724C1210000715249 /* ProfileViewController.m in Sources */,
 				9B7FF63124BD18B200204BC1 /* DealCell.m in Sources */,
 				9BE0C9D424C7C3B800C92377 /* WebViewController.m in Sources */,
+				9B45B6BC24DC46B900D24A4D /* DealMarker.m in Sources */,
 				9BE7983424C11E5300715249 /* LoginViewController.m in Sources */,
 				9B7FF63724BD1AAF00204BC1 /* APIManager.m in Sources */,
 				9B7FF61D24BD129A00204BC1 /* main.m in Sources */,

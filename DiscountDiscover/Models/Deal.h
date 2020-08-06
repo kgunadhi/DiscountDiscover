@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Deal : NSObject
+@interface Deal : NSObject <NSCoding, NSSecureCoding>
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *dealDescription;

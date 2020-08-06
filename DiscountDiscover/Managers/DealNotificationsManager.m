@@ -19,7 +19,7 @@
     NSString *body = [NSString stringWithFormat:@"%@: %@", deal.storeName, deal.name];
     content.body = [NSString localizedUserNotificationStringForKey:body
             arguments:nil];
-    NSData *dealData = [NSKeyedArchiver archivedDataWithRootObject:deal requiringSecureCoding:NO error:nil];
+    NSData *dealData = [NSKeyedArchiver archivedDataWithRootObject:deal requiringSecureCoding:YES error:nil];
     content.userInfo = @{@"Deal": dealData};
      
     // create trigger

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import <UIKit/UIKit.h>
 #import "Deal.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -15,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface APIManager : NSObject
 
 - (id)init;
-- (void)fetchDeals:(double)radius completion:(void(^)(NSArray<Deal *> *deals, NSError *error))completion;
+- (void)fetchDealsWithRadius:(double)radius numberOfDeals:(int)number completion:(void(^)(NSArray<Deal *> *deals, NSError *error))completion;
 - (void)fetchNearbyDeal:(void (^)(Deal *deal, UIBackgroundFetchResult result))completionHandler;
 + (NSString *)getAPIKey:(NSString *)key;
 

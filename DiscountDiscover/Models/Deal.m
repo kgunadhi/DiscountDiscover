@@ -83,9 +83,13 @@
     return deals;
 }
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 - (void)encodeWithCoder:(NSCoder *)encoder {
     [encoder encodeObject:self.name forKey:@"dealName"];
-    [encoder encodeObject:self.dealDescription forKey:@"name"];
+    [encoder encodeObject:self.dealDescription forKey:@"dealDescription"];
     [encoder encodeObject:self.finePrint forKey:@"finePrint"];
     [encoder encodeObject:self.url forKey:@"url"];
     [encoder encodeObject:self.category forKey:@"category"];
