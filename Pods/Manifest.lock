@@ -16,6 +16,9 @@ PODS:
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - Bolts/Tasks (1.9.1)
+  - ChameleonFramework (2.1.0):
+    - ChameleonFramework/Default (= 2.1.0)
+  - ChameleonFramework/Default (2.1.0)
   - GoogleMaps (3.10.0-beta1):
     - GoogleMaps/Maps (= 3.10.0-beta1)
   - GoogleMaps/Base (3.10.0-beta1)
@@ -31,6 +34,7 @@ PODS:
 DEPENDENCIES:
   - ActionSheetPicker-3.0
   - AFNetworking
+  - ChameleonFramework
   - GoogleMaps (~> 3.10.0-beta)
   - Parse
   - Parse/UI
@@ -40,6 +44,7 @@ SPEC REPOS:
     - ActionSheetPicker-3.0
     - AFNetworking
     - Bolts
+    - ChameleonFramework
     - GoogleMaps
     - Parse
 
@@ -47,9 +52,10 @@ SPEC CHECKSUMS:
   ActionSheetPicker-3.0: 6d79f6f3b98e2b21d218dd65a39f634ff37a27e5
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   GoogleMaps: 17598f733b70288939758dad9bafd7dfeab3c1dc
   Parse: 79bdda34fdb7eb2a707a43a951c8aae236cb3e34
 
-PODFILE CHECKSUM: 5a089ea83c5e9dd408d82a6ae226dcfbf92f6b70
+PODFILE CHECKSUM: cc314b0bf0d9822996f7e550334a2aaed659bb8f
 
 COCOAPODS: 1.9.3

@@ -38,8 +38,6 @@
     
     // distance filter
     self.distanceButton.layer.cornerRadius = 15;
-    self.distanceButton.layer.borderWidth = 1.0f;
-    self.distanceButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.radius = 5;
     self.selectedIndex = 3;
     

@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UIButton *signupButton;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 
 @end
 
@@ -71,6 +72,27 @@
     return NO;
 }
 
+- (IBAction)onEditingBegin:(id)sender {
+    // raise content when typing
+    [self changeContentFrameYBy:-70];
+}
 
+- (IBAction)onEditingEnd:(id)sender {
+    // lower content when done typing
+    [self changeContentFrameYBy:70];
+}
+
+- (void)changeContentFrameYBy:(int)y {
+    CGRect newFrame = self.contentView.frame;
+    newFrame.origin.y += y;
+    
+    __weak typeof(self) weakSelf = self;
+    [UIView animateWithDuration:0.2 animations:^{
+        __strong typeof(self) strongSelf = weakSelf;
+        if (strongSelf) {
+            strongSelf.contentView.frame = newFrame;
+        }
+    }];
+}
 
 @end
