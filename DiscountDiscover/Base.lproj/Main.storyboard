@@ -662,6 +662,10 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="onEditingBegin:" destination="MA6-rh-7dE" eventType="editingDidBegin" id="REZ-7u-BfS"/>
+                                            <action selector="onEditingEnd:" destination="MA6-rh-7dE" eventType="editingDidEnd" id="wcS-WL-RuP"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ThL-sz-YGC">
                                         <rect key="frame" x="20" y="395" width="374" height="45"/>
@@ -670,6 +674,10 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <action selector="onEditingBegin:" destination="MA6-rh-7dE" eventType="editingDidBegin" id="qf2-dA-wrE"/>
+                                            <action selector="onEditingEnd:" destination="MA6-rh-7dE" eventType="editingDidEnd" id="yRD-lY-371"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -709,6 +717,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="jC3-TJ-eEJ"/>
                     <connections>
+                        <outlet property="contentView" destination="oaZ-Lp-MOM" id="S4x-um-9XZ"/>
                         <outlet property="emailField" destination="BMS-Ha-lHe" id="zBH-Vo-mds"/>
                         <outlet property="nameField" destination="EmJ-Da-iGx" id="8Xw-08-kgd"/>
                         <outlet property="passwordField" destination="ThL-sz-YGC" id="CVy-fO-qFc"/>
