@@ -116,6 +116,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="wW0-8G-pBI" firstAttribute="top" secondItem="tol-KQ-Ber" secondAttribute="top" constant="8" id="JRS-Fo-8hB"/>
                             <constraint firstItem="P8b-qX-ACA" firstAttribute="leading" secondItem="tol-KQ-Ber" secondAttribute="leading" id="j0z-1f-Hd3"/>
@@ -180,14 +181,16 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJP-Sx-YGN">
-                                                <rect key="frame" x="117" y="385" width="19" height="22"/>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJP-Sx-YGN">
+                                                <rect key="frame" x="117" y="383.5" width="25" height="25"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="22" id="1aH-bI-4PH"/>
-                                                    <constraint firstAttribute="width" constant="19" id="Nt4-5H-zPx"/>
+                                                    <constraint firstAttribute="height" constant="25" id="1aH-bI-4PH"/>
+                                                    <constraint firstAttribute="width" constant="25" id="Nt4-5H-zPx"/>
                                                 </constraints>
                                                 <state key="normal" image="square.and.arrow.up" catalog="system"/>
                                                 <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="JLz-Q2-wUO" appends="YES" id="plH-L7-c74"/>
                                                     <segue destination="1gE-QC-PTN" kind="presentation" id="Hqh-0u-arV"/>
                                                 </connections>
                                             </button>
@@ -298,8 +301,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnq-PE-Ei3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="JLz-Q2-wUO">
+                    <connections>
+                        <action selector="longPressWebButton:" destination="VpB-dq-Dcv" id="b3m-di-U3w"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1194.2028985507247" y="1506.6964285714284"/>
+            <point key="canvasLocation" x="-1194" y="1539"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="e07-Gg-iDM">
@@ -333,7 +341,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LTr-A7-PyC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1194" y="2213"/>
+            <point key="canvasLocation" x="-1194" y="2245"/>
         </scene>
         <!--Map-->
         <scene sceneID="KWq-Zc-cgn">

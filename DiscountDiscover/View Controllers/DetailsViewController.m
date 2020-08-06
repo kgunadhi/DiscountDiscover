@@ -43,6 +43,10 @@
     }
 }
 
+- (IBAction)longPressWebButton:(id)sender {
+    [[UIApplication sharedApplication] openURL:self.deal.url options:@{} completionHandler:nil];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
