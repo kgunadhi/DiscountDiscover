@@ -13,7 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface User : PFUser<PFSubclassing>
 
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSArray<NSString *> *preferences;
+@property (nonatomic, strong) NSArray<NSString *> *preferenceNames;
+@property (nonatomic, strong) NSArray<NSString *> *preferenceSlugs;
 @property (nonatomic, strong) PFFileObject *profileImage;
 
 @end

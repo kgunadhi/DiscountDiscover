@@ -17,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
-@property (weak, nonatomic) IBOutlet UIButton *signupButton;
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 
 @end
@@ -27,8 +27,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.signupButton.layer.cornerRadius = 7;
-    self.signupButton.clipsToBounds = YES;
+    self.nextButton.layer.cornerRadius = 7;
+    self.nextButton.clipsToBounds = YES;
 }
 
 - (IBAction)onTap:(id)sender {

@@ -10,9 +10,10 @@
 #import "SceneDelegate.h"
 #import "LoginViewController.h"
 #import "User.h"
+#import "PreferencesViewController.h"
 @import Parse;
 
-@interface ProfileViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface ProfileViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, PreferencesViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet PFImageView *profileView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -32,7 +33,7 @@
     self.nameLabel.text = self.user.name;
     self.usernameLabel.text = [@"@" stringByAppendingString:self.user.username];
     self.emailLabel.text = self.user.email;
-    self.preferencesLabel.text = [self.user.preferences componentsJoinedByString:@"\n"];
+    self.preferencesLabel.text = [self.user.preferenceNames componentsJoinedByString:@"\n"];
     
     if (self.user.profileImage) {
         self.profileView.file = self.user.profileImage;
@@ -94,6 +95,9 @@
     return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
 }
 
+- (void)didEditPreferences {
+    self.preferencesLabel.text = [self.user.preferenceNames componentsJoinedByString:@"\n"];
+}
 
 - (IBAction)logoutUser:(id)sender {
     SceneDelegate *sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
@@ -103,6 +107,16 @@
     sceneDelegate.window.rootViewController = loginViewController;
     
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {}];
+}
+
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    // edit preferences
+    PreferencesViewController *preferencesViewController = [segue destinationViewController];
+    preferencesViewController.delegate = self;
 }
 
 @end
