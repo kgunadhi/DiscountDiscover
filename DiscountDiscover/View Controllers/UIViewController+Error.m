@@ -21,4 +21,13 @@
     [self presentViewController:errorAlert animated:YES completion:nil];
 }
 
+- (void)showNetworkErrorAlertWithCompletion:(void (^)(UIAlertAction * _Nonnull action))completion {
+    UIAlertController *networkAlert = [UIAlertController alertControllerWithTitle:@"Cannot Get Deals" message:@"The Internet connection appears to be offline." preferredStyle:(UIAlertControllerStyleAlert)];
+    
+    UIAlertAction *reloadAction = [UIAlertAction actionWithTitle:@"Try Again" style:UIAlertActionStyleDefault handler:completion];
+    [networkAlert addAction:reloadAction];
+    
+    [self presentViewController:networkAlert animated:YES completion:^{}];
+}
+
 @end

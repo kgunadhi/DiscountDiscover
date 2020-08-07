@@ -13,6 +13,7 @@
 #import "ActionSheetPicker.h"
 #import "LocationManager.h"
 #import "MapViewController.h"
+#import "UIViewController+Error.h"
 #import <UserNotifications/UserNotifications.h>
 
 @interface DealsViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UITabBarControllerDelegate, UNUserNotificationCenterDelegate>
@@ -69,7 +70,9 @@
         __strong typeof(self) strongSelf = weakSelf;
         if (strongSelf) {
             if (error != nil) {
-                [strongSelf showNetworkErrorAlert];
+                [strongSelf showNetworkErrorAlertWithCompletion:^(UIAlertAction * _Nonnull action) {
+                    [strongSelf fetchDeals];
+                }];
             }
             else {
                 strongSelf.deals = deals;
@@ -88,18 +91,6 @@
         vc.deals = self.deals;
     }
     return YES;
-}
-
-- (void)showNetworkErrorAlert {
-    UIAlertController *networkAlert = [UIAlertController alertControllerWithTitle:@"Cannot Get Deals" message:@"The Internet connection appears to be offline." preferredStyle:(UIAlertControllerStyleAlert)];
-    
-    __weak typeof(self) weakSelf = self;
-    UIAlertAction *reloadAction = [UIAlertAction actionWithTitle:@"Try Again" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [weakSelf fetchDeals];
-    }];
-    [networkAlert addAction:reloadAction];
-    
-    [self presentViewController:networkAlert animated:YES completion:^{}];
 }
 
 - (IBAction)filterDistance:(id)sender {

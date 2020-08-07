@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIViewController (Error)
 
 - (void)showErrorAlert:(NSString *)title message:(NSString *)message;
+- (void)showNetworkErrorAlertWithCompletion:(void (^)(UIAlertAction * _Nonnull action))completion;
 
 @end
 
