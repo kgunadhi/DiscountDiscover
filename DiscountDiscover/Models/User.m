@@ -11,7 +11,8 @@
 @implementation User
 
 @dynamic name;
-@dynamic preferences;
+@dynamic preferenceNames;
+@dynamic preferenceSlugs;
 @dynamic profileImage;
 
 @end
