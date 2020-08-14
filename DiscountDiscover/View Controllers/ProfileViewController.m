@@ -48,13 +48,26 @@
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
     
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
-    } else {
-        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    }
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Change Profile Photo" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
 
-    [self presentViewController:imagePickerVC animated:YES completion:nil];
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Take Photo" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+        [self presentViewController:imagePickerVC animated:YES completion:nil];
+    }]];
+
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Choose from Library" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        [self presentViewController:imagePickerVC animated:YES completion:nil];
+
+    }]];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    }]];
+
+    [self presentViewController:actionSheet animated:YES completion:nil];
+    
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {

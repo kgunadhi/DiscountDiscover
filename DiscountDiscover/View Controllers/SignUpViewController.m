@@ -18,7 +18,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
-@property (weak, nonatomic) IBOutlet UIView *contentView;
 
 @end
 
@@ -83,14 +82,14 @@
 }
 
 - (void)changeContentFrameYBy:(int)y {
-    CGRect newFrame = self.contentView.frame;
+    CGRect newFrame = self.view.frame;
     newFrame.origin.y += y;
     
     __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:0.2 animations:^{
         __strong typeof(self) strongSelf = weakSelf;
         if (strongSelf) {
-            strongSelf.contentView.frame = newFrame;
+            strongSelf.view.frame = newFrame;
         }
     }];
 }

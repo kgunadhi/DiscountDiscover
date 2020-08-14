@@ -91,7 +91,7 @@
             completion(nil, error);
         }
         else {
-            // create array of deals from response
+            // create array of categories from response
             NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
 
             NSArray<NSDictionary *> *dictionaries = dataDictionary[@"categories"];

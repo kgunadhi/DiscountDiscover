@@ -192,7 +192,7 @@
                                                 <state key="normal" image="square.and.arrow.up" catalog="system"/>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="JLz-Q2-wUO" appends="YES" id="plH-L7-c74"/>
-                                                    <segue destination="1gE-QC-PTN" kind="presentation" id="Hqh-0u-arV"/>
+                                                    <segue destination="1gE-QC-PTN" kind="show" id="Hqh-0u-arV"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expires" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7JL-hN-EVc">
@@ -351,13 +351,13 @@
         <!--Web View Controller-->
         <scene sceneID="e07-Gg-iDM">
             <objects>
-                <viewController id="1gE-QC-PTN" customClass="WebViewController" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="1gE-QC-PTN" customClass="WebViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4gD-ZR-OI5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpt-FF-SP0">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="703"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -374,6 +374,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ker-Eh-Fes"/>
                     </view>
+                    <navigationItem key="navigationItem" id="KSN-PD-Hc7"/>
                     <connections>
                         <outlet property="webView" destination="hpt-FF-SP0" id="fz9-Ak-Yzf"/>
                     </connections>
@@ -759,7 +760,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="jC3-TJ-eEJ"/>
                     <connections>
-                        <outlet property="contentView" destination="oaZ-Lp-MOM" id="S4x-um-9XZ"/>
                         <outlet property="emailField" destination="BMS-Ha-lHe" id="zBH-Vo-mds"/>
                         <outlet property="nameField" destination="EmJ-Da-iGx" id="8Xw-08-kgd"/>
                         <outlet property="nextButton" destination="prO-cN-fGC" id="RbR-eT-T1y"/>
