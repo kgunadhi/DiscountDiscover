@@ -92,7 +92,7 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
 ## Wireframes
 <img src="https://i.imgur.com/oLvl4M3.jpg" width=800>
 
-### 4. Schema 
+## Schema 
 ### Models
 #### Deal - from DiscountAPI
 
@@ -179,5 +179,5 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
     `GET`    | /deals/:id | gets specific deal by :id
     `GET`    | /categories   | get all categories
     
-### 5. Video Walkthrough
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/LJB4fFD" data-context="false" ><a href="//imgur.com/a/LJB4fFD"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+## Video Walkthrough
+<img src='https://i.imgur.com/LJB4fFD.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
