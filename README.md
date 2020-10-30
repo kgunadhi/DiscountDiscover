@@ -91,7 +91,7 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
 ## Wireframes
 <img src="https://i.imgur.com/oLvl4M3.jpg" width=800>
 
-## Schema 
+## 4. Schema 
 ### Models
 #### Deal - from DiscountAPI
 
@@ -177,3 +177,6 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
     `GET`    | /deals/?location=location&radius=radius&category_slugs=category_slugs | get all deals within radius of location within specified categories
     `GET`    | /deals/:id | gets specific deal by :id
     `GET`    | /categories   | get all categories
+    
+## 5. Video Walkthrough
+<img src='https://imgur.com/a/LJB4fFD' title='Video Walkthrough' width='' alt='Video Walkthrough' />
