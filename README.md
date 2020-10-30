@@ -180,4 +180,4 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
     `GET`    | /categories   | get all categories
     
 ## Video Walkthrough
-<img src='https://i.imgur.com/LJB4fFD.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/NzzbnXR.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
