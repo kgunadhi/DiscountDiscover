@@ -5,9 +5,10 @@ Original App Design Project
 
 ## Table of Contents
 1. [Overview](#Overview)
-1. [Product Spec](#Product-Spec)
-1. [Wireframes](#Wireframes)
-2. [Schema](#Schema)
+2. [Product Spec](#Product-Spec)
+3. [Wireframes](#Wireframes)
+4. [Schema](#Schema)
+5. [Video Walkthrough](#Video-Walkthrough)
 
 ## Overview
 ### Description
@@ -91,7 +92,7 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
 ## Wireframes
 <img src="https://i.imgur.com/oLvl4M3.jpg" width=800>
 
-## 4. Schema 
+### 4. Schema 
 ### Models
 #### Deal - from DiscountAPI
 
@@ -178,5 +179,5 @@ Discount Discover shows coupons and sales at nearby stores based on the user's c
     `GET`    | /deals/:id | gets specific deal by :id
     `GET`    | /categories   | get all categories
     
-## 5. Video Walkthrough
-<img src='https://imgur.com/a/LJB4fFD' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+### 5. Video Walkthrough
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/LJB4fFD" data-context="false" ><a href="//imgur.com/a/LJB4fFD"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
